@@ -137,97 +137,6 @@ class DepartmentSeeder extends Seeder
                     ]
                 ]
             ], [
-                'name' => 'Agency Management',
-                'slug' => '/agency',
-                'type'  => '',
-                'type'  => 'list',
-                'language' => ['lang' => 'kh', 'name' => "ភ្នាក់ងារប្រឹក្សា"],
-                'description' => 'application for every staff working progress',
-                'status' => true,
-                'icon' => '<svg viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0663 12.0369C17.432 12.0644 17.7057 12.384 17.6782 12.7498L17.51 14.9715C17.3709 16.8045 15.8239 18.24 13.9865 18.24H3.71448C1.87703 18.24 0.330032 16.8045 0.191006 14.9715L0.0227578 12.7498C-0.00469324 12.384 0.269817 12.0644 0.635536 12.0369C1.00303 12.0236 1.32004 12.2831 1.34838 12.6497L1.51574 14.8706C1.60252 16.0147 2.56773 16.9117 3.71448 16.9117H13.9865C15.1332 16.9117 16.0993 16.0147 16.1852 14.8706L16.3535 12.6497C16.3818 12.2831 16.7068 12.0227 17.0663 12.0369ZM9.99297 0.759766C11.3239 0.759766 12.4264 1.75709 12.5925 3.04354L14.3365 3.04431C16.1926 3.04431 17.7015 4.55766 17.7015 6.41902V9.46431C17.7015 9.70075 17.5757 9.91858 17.373 10.0372C15.1872 11.3173 12.4184 12.0638 9.51448 12.1634L9.5148 13.7561C9.5148 14.1228 9.21726 14.4203 8.85066 14.4203C8.48405 14.4203 8.18652 14.1228 8.18652 13.7561L8.18594 12.1637C5.28493 12.065 2.51589 11.3182 0.328527 10.0372C0.124858 9.91858 0 9.70075 0 9.46431V6.41016C0 4.55412 1.51335 3.04431 3.37382 3.04431L5.10882 3.04354C5.27489 1.75709 6.37746 0.759766 7.70834 0.759766H9.99297ZM14.3365 4.37259H3.37382C2.24567 4.37259 1.32828 5.28644 1.32828 6.41016V9.07734C3.43024 10.2194 6.08017 10.8454 8.83834 10.8466L8.85066 10.8455L8.86049 10.8458L9.28213 10.8414C11.8907 10.7793 14.3791 10.1604 16.3732 9.07734V6.41902C16.3732 5.28998 15.4602 4.37259 14.3365 4.37259ZM9.99297 2.08804H7.70834C7.11208 2.08804 6.60876 2.49385 6.46007 3.04376H11.2412C11.0926 2.49385 10.5892 2.08804 9.99297 2.08804Z" fill="currentColor"/>
-                    </svg>',
-                'actions' => ['Agency', 'Agency Structure', 'Agency Setting'],
-                'children' => [
-                    [
-                        'name' => 'Agency',
-                        'slug' => '/agency/list',
-                        'language' => ['lang' => 'kh', 'name' => "បញ្ជីភា្នក់ងារប្រឹក្សា"],
-                        'description' => 'user agency and apply',
-                        'status' => true,
-                        'type' => 'menu',
-                        'icon' => '<svg width="15px" height="15px" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0663 12.0369C17.432 12.0644 17.7057 12.384 17.6782 12.7498L17.51 14.9715C17.3709 16.8045 15.8239 18.24 13.9865 18.24H3.71448C1.87703 18.24 0.330032 16.8045 0.191006 14.9715L0.0227578 12.7498C-0.00469324 12.384 0.269817 12.0644 0.635536 12.0369C1.00303 12.0236 1.32004 12.2831 1.34838 12.6497L1.51574 14.8706C1.60252 16.0147 2.56773 16.9117 3.71448 16.9117H13.9865C15.1332 16.9117 16.0993 16.0147 16.1852 14.8706L16.3535 12.6497C16.3818 12.2831 16.7068 12.0227 17.0663 12.0369ZM9.99297 0.759766C11.3239 0.759766 12.4264 1.75709 12.5925 3.04354L14.3365 3.04431C16.1926 3.04431 17.7015 4.55766 17.7015 6.41902V9.46431C17.7015 9.70075 17.5757 9.91858 17.373 10.0372C15.1872 11.3173 12.4184 12.0638 9.51448 12.1634L9.5148 13.7561C9.5148 14.1228 9.21726 14.4203 8.85066 14.4203C8.48405 14.4203 8.18652 14.1228 8.18652 13.7561L8.18594 12.1637C5.28493 12.065 2.51589 11.3182 0.328527 10.0372C0.124858 9.91858 0 9.70075 0 9.46431V6.41016C0 4.55412 1.51335 3.04431 3.37382 3.04431L5.10882 3.04354C5.27489 1.75709 6.37746 0.759766 7.70834 0.759766H9.99297ZM14.3365 4.37259H3.37382C2.24567 4.37259 1.32828 5.28644 1.32828 6.41016V9.07734C3.43024 10.2194 6.08017 10.8454 8.83834 10.8466L8.85066 10.8455L8.86049 10.8458L9.28213 10.8414C11.8907 10.7793 14.3791 10.1604 16.3732 9.07734V6.41902C16.3732 5.28998 15.4602 4.37259 14.3365 4.37259ZM9.99297 2.08804H7.70834C7.11208 2.08804 6.60876 2.49385 6.46007 3.04376H11.2412C11.0926 2.49385 10.5892 2.08804 9.99297 2.08804Z" fill="currentColor"/>
-                        </svg>',
-                        'actions' => ['Create Agency', 'Edit Agency', 'Delete Agency', 'Promote', 'Demote', 'Preview Agency', 'Assign Shop'],
-                        'children' => []
-                    ], [
-                        'name' => 'Agency Structure',
-                        'slug' => '/agency/structure',
-                        'type' => 'menu',
-                        'language' => ['lang' => 'kh', 'name' => "រចនាសម្ព័ន្ធភ្នាក់ងារ"],
-                        'description' => 'Agency structure and preview by indivual',
-                        'status' => true,
-                        'icon' => '<svg  width="19px" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 6.5C4.10313 6.5 5 5.60313 5 4.5C5 3.39688 4.10313 2.5 3 2.5C1.89688 2.5 1 3.39688 1 4.5C1 5.60313 1.89688 6.5 3 6.5ZM17 6.5C18.1031 6.5 19 5.60313 19 4.5C19 3.39688 18.1031 2.5 17 2.5C15.8969 2.5 15 3.39688 15 4.5C15 5.60313 15.8969 6.5 17 6.5ZM18 7.5H16C15.45 7.5 14.9531 7.72188 14.5906 8.08125C15.85 8.77188 16.7437 10.0188 16.9375 11.5H19C19.5531 11.5 20 11.0531 20 10.5V9.5C20 8.39688 19.1031 7.5 18 7.5ZM10 7.5C11.9344 7.5 13.5 5.93438 13.5 4C13.5 2.06563 11.9344 0.5 10 0.5C8.06563 0.5 6.5 2.06563 6.5 4C6.5 5.93438 8.06563 7.5 10 7.5ZM12.4 8.5H12.1406C11.4906 8.8125 10.7688 9 10 9C9.23125 9 8.5125 8.8125 7.85938 8.5H7.6C5.6125 8.5 4 10.1125 4 12.1V13C4 13.8281 4.67188 14.5 5.5 14.5H14.5C15.3281 14.5 16 13.8281 16 13V12.1C16 10.1125 14.3875 8.5 12.4 8.5ZM5.40938 8.08125C5.04688 7.72188 4.55 7.5 4 7.5H2C0.896875 7.5 0 8.39688 0 9.5V10.5C0 11.0531 0.446875 11.5 1 11.5H3.05938C3.25625 10.0188 4.15 8.77188 5.40938 8.08125Z" fill="currentColor"/>
-                        </svg>',
-                        'actions' => ['View Structure'],
-                        'children' => []
-                    ],
-                    [
-                        'name' => 'Agency Setting',
-                        'slug' => '/agency/setting',
-                        'type'  => 'menu',
-                        'language' => ['lang' => 'kh', 'name' => "ការកំណត់ភ្នាក់ងារ"],
-                        'description' => 'Agency structure and preview by indivual',
-                        'status' => true,
-                        'icon' => '<svg width="15px" height="15px" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.70929 4.52277C6.13874 4.52277 5.67651 4.98499 5.67651 5.55554C5.67651 6.1261 6.13874 6.58832 6.70929 6.58832C7.27985 6.58832 7.74207 6.1261 7.74207 5.55554C7.74207 4.98499 7.27985 4.52277 6.70929 4.52277Z" fill="currentColor"/>
-                                <path d="M6.70929 0.5C4.00096 0.5 1.79818 2.62333 1.66818 5.29556L0.281514 7.14444C0.100958 7.38278 0.274292 7.72222 0.570403 7.72222H1.65374V9.88889C1.65374 10.6833 2.30374 11.3333 3.09818 11.3333H3.8204V13.5H8.87596V10.12C10.5804 9.31111 11.7648 7.57056 11.7648 5.55556C11.7648 2.76056 9.50429 0.5 6.70929 0.5ZM8.87596 5.55556C8.87596 5.64944 8.86874 5.74333 8.86151 5.83722L9.46096 6.31389C9.51874 6.35722 9.53318 6.42944 9.49707 6.49444L8.91929 7.49833C8.88318 7.56333 8.80374 7.585 8.74596 7.56333L8.03096 7.27444C7.87929 7.39 7.7204 7.48389 7.54707 7.55611L7.43151 8.32167C7.42429 8.39389 7.35929 8.44444 7.28707 8.44444H6.13151C6.05929 8.44444 6.00151 8.39389 5.98707 8.32167L5.87874 7.55611C5.69818 7.48389 5.53929 7.39 5.38762 7.27444L4.67263 7.56333C4.60763 7.585 4.52818 7.56333 4.49207 7.49833L3.91429 6.49444C3.87818 6.43667 3.89263 6.35722 3.9504 6.31389L4.55707 5.83722C4.54985 5.74333 4.54262 5.64944 4.54262 5.55556C4.54262 5.46167 4.55707 5.36056 4.57151 5.27389L3.95762 4.79722C3.89985 4.75389 3.8854 4.68167 3.92151 4.60944L4.49929 3.61278C4.5354 3.54778 4.60763 3.52611 4.67263 3.54778L5.39485 3.83667C5.53929 3.72833 5.7054 3.62722 5.87874 3.555L5.98707 2.78944C6.00151 2.71722 6.05929 2.66667 6.13151 2.66667H7.28707C7.35929 2.66667 7.41707 2.71722 7.43151 2.78944L7.53985 3.555C7.71318 3.62722 7.87207 3.72111 8.02374 3.83667L8.74596 3.54778C8.81096 3.52611 8.8904 3.54778 8.91929 3.61278L9.49707 4.60944C9.53318 4.67444 9.51874 4.75389 9.46096 4.79722L8.84707 5.27389C8.86874 5.36056 8.87596 5.45444 8.87596 5.55556Z" fill="currentColor"/>
-                            </svg> ',
-                        'actions' => ['Position', 'Commission Fee', 'Set Award Target', 'Period of Expiration'],
-                        'children' => [
-                            [
-                                'name' => 'Position',
-                                'slug' => '/agency/setting',
-                                'type'  => 'sub_menu',
-                                'language' => ['lang' => 'kh', 'name' => "បញ្ជីមុខតំណែង"],
-                                'description' => 'position',
-                                'status' => true,
-                                'icon' => '',
-                                'actions' => ['Create Position', 'Edit Position']
-                            ], [
-                                'name' => 'Commission Fee',
-                                'slug' => '/agency/setting',
-                                'type'  => 'sub_menu',
-                                'language' => ['lang' => 'kh', 'name' => "កម្រៃជើងសារ"],
-                                'description' => 'user management',
-                                'status' => true,
-                                'icon' => '',
-                                'actions' => ["Update Commission Fee"]
-                            ], [
-                                'name' => 'Set Award Target',
-                                'slug' => '/agency/set-award-target',
-                                'type'  => 'sub_menu',
-                                'language' => ['lang' => 'kh', 'name' => "កំណត់គោលដៅរង្វាន់"],
-                                'description' => 'set award target sale & recruit agency',
-                                'status' => true,
-                                'icon' => '',
-                                'actions' => ["Create Target", "Update Target"]
-                            ], [
-                                'name' => 'Period of Expiration',
-                                'slug' => '/agency/period-of-expiration',
-                                'type'  => 'sub_menu',
-                                'language' => ['lang' => 'kh', 'name' => "រយៈពេលផុតកំណត់"],
-                                'description' => 'Periond of expiration',
-                                'status' => true,
-                                'icon' => '',
-                                'actions' => ["Update Period of Expiration"]
-                            ]
-                        ]
-                    ]
-                ]
-            ], [
                 'name' => 'Sales',
                 'slug' => '/sale',
                 'type'  => 'list',
@@ -266,42 +175,6 @@ class DepartmentSeeder extends Seeder
                     ]
                 ]
             ], [
-                'name' => 'Finance',
-                'slug' => '/finance',
-                'type'  => 'performance',
-                'language' => ['lang' => 'kh', 'name' => "ហិរញ្ញវត្ថុ"],
-                'description' => 'humance resource management',
-                'status' => true,
-                'icon' => '<i class="bi bi-cash-coin"></i>',
-                'actions' => ['Performance', 'Payroll'],
-                'children' => [
-                    [
-                        'name' => 'Performance',
-                        'slug' => '/finance/performance',
-                        'type'  => 'menu',
-                        'language' => ['lang' => 'kh', 'name' => "ការអនុវត្ថការងារ"],
-                        'description' => 'agency performance',
-                        'status' => true,
-                        'icon' => '<svg width="15px" height="15px" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 4.4H2.78571V13.5H0V4.4ZM5.2 0.5H7.8V13.5H5.2V0.5ZM10.4 7.92857H13V13.5H10.4V7.92857Z" fill="#B7B7B7"/>
-                            </svg>',
-                        'actions' => ["Preview Performance", "Download Performance"],
-                        'children' => []
-                    ], [
-                        'name' => 'Payroll',
-                        'slug' => '/finance/payroll',
-                        'type'  => 'menu',
-                        'language' => ['lang' => 'kh', 'name' => "ប្រាក់បៀវត្សរ៍"],
-                        'description' => 'agency payroll by monthly and commission fee ',
-                        'status' => true,
-                        'icon' => '<svg width="15px" height="15px" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.10001 0.5C3.51201 0.5 0.600006 3.412 0.600006 7C0.600006 10.588 3.51201 13.5 7.10001 13.5C10.688 13.5 13.6 10.588 13.6 7C13.6 3.412 10.688 0.5 7.10001 0.5ZM8.01651 10.9585V12.2H6.28101V10.9455C5.16951 10.7115 4.22701 9.9965 4.15551 8.7355H5.42951C5.49451 9.418 5.96251 9.951 7.15201 9.951C8.42601 9.951 8.71201 9.314 8.71201 8.9175C8.71201 8.378 8.42601 7.871 6.97651 7.5265C5.36451 7.1365 4.25951 6.4735 4.25951 5.141C4.25951 4.023 5.16301 3.295 6.28101 3.0545V1.8H8.01651V3.0675C9.22551 3.36 9.83001 4.2765 9.86901 5.271H8.59501C8.56251 4.5495 8.17901 4.0555 7.15201 4.0555C6.17701 4.0555 5.59201 4.4975 5.59201 5.1215C5.59201 5.6675 6.01451 6.025 7.32751 6.363C8.64051 6.701 10.0445 7.2665 10.0445 8.9045C10.038 10.094 9.14751 10.744 8.01651 10.9585Z" fill="currentColor"/>
-                            </svg>',
-                        'actions' => ['Generate Payroll', 'Edit Payroll Status'],
-                        'children' => []
-                    ]
-                ]
-            ], [
                 'name' => 'Other Management',
                 'slug' => '/manage',
                 'type'  => 'list',
@@ -320,7 +193,7 @@ class DepartmentSeeder extends Seeder
                         'status' => true,
                         'type' => 'menu',
                         'icon' => '<i class="bi bi-shop"></i>',
-                        'actions' => ['Create Shop', 'Edit Shop', "View Shop"],
+                        'actions' => ['Create Shop', 'Edit Shop', "View Shop", "Assign User Shop"],
                         'children' => []
                     ], [
                         'name' => 'Product',
@@ -348,7 +221,7 @@ class DepartmentSeeder extends Seeder
                 'actions' => ['Agency Report', 'Finance Report'],
                 'children' => [
                     [
-                        'name' => 'Agency Report',
+                        'name' => 'Sale Summary Report by Company',
                         'slug' => '/report/agency',
                         'type'  => 'menu',
                         'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ភា្នក់ងារប្រឹក្សា"],
@@ -358,45 +231,7 @@ class DepartmentSeeder extends Seeder
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0663 12.0369C17.432 12.0644 17.7057 12.384 17.6782 12.7498L17.51 14.9715C17.3709 16.8045 15.8239 18.24 13.9865 18.24H3.71448C1.87703 18.24 0.330032 16.8045 0.191006 14.9715L0.0227578 12.7498C-0.00469324 12.384 0.269817 12.0644 0.635536 12.0369C1.00303 12.0236 1.32004 12.2831 1.34838 12.6497L1.51574 14.8706C1.60252 16.0147 2.56773 16.9117 3.71448 16.9117H13.9865C15.1332 16.9117 16.0993 16.0147 16.1852 14.8706L16.3535 12.6497C16.3818 12.2831 16.7068 12.0227 17.0663 12.0369ZM9.99297 0.759766C11.3239 0.759766 12.4264 1.75709 12.5925 3.04354L14.3365 3.04431C16.1926 3.04431 17.7015 4.55766 17.7015 6.41902V9.46431C17.7015 9.70075 17.5757 9.91858 17.373 10.0372C15.1872 11.3173 12.4184 12.0638 9.51448 12.1634L9.5148 13.7561C9.5148 14.1228 9.21726 14.4203 8.85066 14.4203C8.48405 14.4203 8.18652 14.1228 8.18652 13.7561L8.18594 12.1637C5.28493 12.065 2.51589 11.3182 0.328527 10.0372C0.124858 9.91858 0 9.70075 0 9.46431V6.41016C0 4.55412 1.51335 3.04431 3.37382 3.04431L5.10882 3.04354C5.27489 1.75709 6.37746 0.759766 7.70834 0.759766H9.99297ZM14.3365 4.37259H3.37382C2.24567 4.37259 1.32828 5.28644 1.32828 6.41016V9.07734C3.43024 10.2194 6.08017 10.8454 8.83834 10.8466L8.85066 10.8455L8.86049 10.8458L9.28213 10.8414C11.8907 10.7793 14.3791 10.1604 16.3732 9.07734V6.41902C16.3732 5.28998 15.4602 4.37259 14.3365 4.37259ZM9.99297 2.08804H7.70834C7.11208 2.08804 6.60876 2.49385 6.46007 3.04376H11.2412C11.0926 2.49385 10.5892 2.08804 9.99297 2.08804Z" fill="currentColor"/>
                         </svg>',
                         'actions' => ['Sale Daily Report', 'Sale Report By Shop | Location', 'Sale Report By Agency Group'],
-                        'children' => [
-                            [
-                                'name' => 'Sale Daily Report',
-                                'slug' => '/report/agency/daily-sale-report',
-                                'type'  => 'sub_menu',
-                                'language' => ['lang' => 'kh', 'name' => "របាយការណ៍លក់ប្រចាំថ្ងៃ"],
-                                'description' => 'daily sale report',
-                                'status' => true,
-                                'icon' => '<i class="bi bi-activity list-icon"></i>',
-                                'actions' => ["Preview Daily Sale Report", "Download Daily Sale Report"]
-                            ], [
-                                'name' => 'Sale Report By Shop | Location',
-                                'slug' => '/report/agency/sale-report-by-shop',
-                                'type'  => 'sub_menu',
-                                'language' => ['lang' => 'kh', 'name' => "របាយការណ៍លក់តាមហាង ឬទីតាំង"],
-                                'description' => 'Sale report by shop || Location',
-                                'status' => true,
-                                'icon' => '<i class="bi bi-shop list-icon"></i>',
-                                'actions' => ["Preview Sale Report", "Download Sale Report"]
-                            ], [
-                                'name' => 'Sale Report By Agency Group',
-                                'slug' => '/report/agency/sale-report-by-agency-group',
-                                'type'  => 'sub_menu',
-                                'language' => ['lang' => 'kh', 'name' => "របាយការណ៍លក់តាមក្រុម"],
-                                'description' => 'daily sale',
-                                'status' => true,
-                                'icon' => '<i class="bi bi-bar-chart list-icon"></i>',
-                                'actions' => ["Preview Sale Report By Agency Group", "Download Sale Report By Agency Group"]
-                            ], [
-                                'name' => 'Recruit report by position',
-                                'slug' => '/report/agency/recruit-report-by-agency-position',
-                                'type'  => 'sub_menu',
-                                'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ណែនាំភ្នាក់ងារតាមតំណែង"],
-                                'description' => 'daily sale',
-                                'status' => true,
-                                'icon' => '<i class="bi bi-person-fill-add list-icon"></i>',
-                                'actions' => ["Preview Recruit report by position ", "Download Recruit report by position"]
-                            ]
-                        ],
+                        'children' => []
                     ], [
                         'name' => 'Finance Report',
                         'slug' => '/report/finance',
@@ -408,45 +243,7 @@ class DepartmentSeeder extends Seeder
                             <path d="M0 4.4H2.78571V13.5H0V4.4ZM5.2 0.5H7.8V13.5H5.2V0.5ZM10.4 7.92857H13V13.5H10.4V7.92857Z" fill="#B7B7B7"/>
                         </svg>',
                         'actions' => ['Sale Commission Report', 'Override Commission Report', 'Salary Report'],
-                        'children' => [
-                            [
-                                'name' => 'Report on Commionsion Fees to LCs',
-                                'slug' => '/report/finance/sale-commission-report',
-                                'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ផ្ដល់ប្រាក់កម្រៃជើងសារសម្រាប់ភ្នាក់ងារប្រឹក្សារបង់រំលស់"],
-                                'description' => 'Commission report',
-                                'status' => true,
-                                'type' => 'sub_menu',
-                                'icon' => '<i class="bi bi-activity list-icon"></i>',
-                                'actions' => ["Preview Sale Commission Report ", "Download Sale Commission Report"]
-                            ], [
-                                'name' => 'Overriding Fee BM/CA Report',
-                                'slug' => '/report/finance/override-commission-report',
-                                'language' => ['lang' => 'kh', 'name' => "ប្រាក់មុខតំណែងរបស់ CA/BM"],
-                                'description' => 'commission report',
-                                'status' => true,
-                                'type' => 'sub_menu',
-                                'icon' => '<i class="bi bi-shop list-icon"></i>',
-                                'actions' => ["Preview Override Commission Report", "Download Override Commission Report"]
-                            ], [
-                                'name' => 'Salary Report',
-                                'slug' => '/report/finance/salary-report',
-                                'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ប្រាក់បៀវត្សរ៍"],
-                                'description' => 'salary report',
-                                'status' => true,
-                                'type' => 'sub_menu',
-                                'icon' => '<i class="bi bi-bar-chart list-icon"></i>',
-                                'actions' => ["Preview Salary Report", "Download Salary Report"]
-                            ], [
-                                'name' => 'Report on Business Allowance/Incentive to CA/BM',
-                                'slug' => '/report/finance/allowence-incentive-report',
-                                'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ផ្ដល់ប្រាក់កម្រៃលើកទឹកចិត្ត BM/CA"],
-                                'description' => 'incentive report',
-                                'status' => true,
-                                'type' => 'sub_menu',
-                                'icon' => '<i class="bi bi-bar-chart list-icon"></i>',
-                                'actions' => ["Preview Salary Report", "Download Incentive Report"]
-                            ]
-                        ],
+                        'children' => [],
                     ]
                 ],
             ], [

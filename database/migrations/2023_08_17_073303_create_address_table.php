@@ -29,7 +29,6 @@ class CreateAddressTable extends Migration
             $table->string('remark')->nullable(true);
             $table->foreignId('user_id')->nullable(true);
             $table->foreignId('shop_id')->nullable(true);
-            $table->foreignId('agency_id')->nullable(true);
             $table->foreignId('application_id')->nullable(true);
             $table->foreignId('loan_company_id')->nullable(true);
             $table->timestamps();
