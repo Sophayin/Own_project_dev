@@ -25,11 +25,6 @@ class Dashboard extends Component
     public $city_id, $district_id, $commune_id;
     public $start_date, $end_date;
 
-    public function __construct()
-    {
-        check_agency_expiration();
-    }
-
     public function render()
     {
         $user = auth()->user();

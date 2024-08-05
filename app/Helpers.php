@@ -56,29 +56,6 @@ if (!function_exists('check_role_name_exist')) {
         return Role::where($column, $value)->first();
     }
 }
-if (!function_exists('check_agency_expiration')) {
-    function check_agency_expiration()
-    {
-        $agencies = Agency::whereIn('status', [1, 2])->get();
-        $setting = AgencySetting::first();
-        foreach ($agencies as $agency) {
-            $diff_days = Today()->diffInDays(Carbon::parse($agency->registered_date));
-            if ($diff_days >= ($setting->period_expiration - 7)) {
-                $check_notification = Notification::whereDay('created_at', Carbon::now()->day())->exists();
-                if (!$check_notification) {
-                    $notify = new Notification();
-                    $notify->title = $agency->full_name;
-                    $notify->type = "notify";
-                    $notify->description = $agency->full_name . ", will expire within " . $diff_days . " days more";
-                    $notify->is_read = false;
-                    $notify->agency_id = $agency->id;
-                    $notify->save();
-                    return;
-                }
-            }
-        }
-    }
-}
 
 if (!function_exists('get_agency_status')) {
     function get_agency_status($status = null)

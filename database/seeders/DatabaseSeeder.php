@@ -25,8 +25,6 @@ class DatabaseSeeder extends Seeder
             LoanCompanySeeder::class,
             OccupationSeeder::class,
             CountrySeeder::class,
-            AwardSeeder::class,
-            AgencySettingSeeder::class,
             ProductSeeder::class,
             ReasonSeeder::class,
         ]);
