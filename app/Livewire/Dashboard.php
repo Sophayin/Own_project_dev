@@ -29,39 +29,6 @@ class Dashboard extends Component
     {
         $user = auth()->user();
         //--query only agencies that has children--
-        $recruitAgencies = Agency::whereIn('position_id', [1, 2, 3, 4])
-            ->whereNotNull('code')
-            ->has('children')
-            ->with('children')
-            ->limit(5)
-            ->get();
-
-        $shops = DB::table('shops')
-            ->join('applications', 'shops.id', '=', 'applications.shop_id')
-            ->select('shops.*', DB::raw('COUNT(applications.id) as applications_count'))
-            ->groupBy('shops.id')
-            ->orderByDesc('applications_count')
-            ->limit(5)
-            ->get();
-
-        $products = DB::table('products')
-            ->join('applications', 'products.id', '=', 'applications.product_id')
-            ->select('products.*', DB::raw('COUNT(applications.id) as applications_count'))
-            ->groupBy('products.id')
-            ->orderByDesc('applications_count')
-            ->limit(5)
-            ->get();
-
-        $latestActions = DB::table('transaction_logs')
-            ->orderByDesc('created_at')
-            ->limit(5)
-            ->get();
-
-        $agencies = Agency::has('applications', '>=', 1)
-            ->withCount('applications')
-            ->orderByDesc('applications_count')
-            ->limit(5)
-            ->get();
         //if ($this->start_date && $this->end_date) {
         //    $agencies = $agencies->whereBetween('updated_at', [$this->start_date . ' 00:00:00 ', $this->end_date . ' 23:59:59 ']);
         //}
@@ -81,11 +48,6 @@ class Dashboard extends Component
             'livewire.dashboard',
             [
                 'user' => $user,
-                'agencies' => $agencies,
-                'recruitAgencies' => $recruitAgencies,
-                'shops' => $shops,
-                'products' => $products,
-                'latestActions' => $latestActions,
             ]
         )->title('Dashboard');
     }

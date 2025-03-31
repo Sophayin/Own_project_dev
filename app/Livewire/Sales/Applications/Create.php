@@ -19,12 +19,7 @@ class Create extends Component
 {
     use WithFileUploads;
 
-    public $agency_id, $shop_name, $client_name, $condition, $income,
-        $client_name_translate, $phone, $product_name, $gender = "Male",
-        $product_price, $occupation, $guarantor_name, $guarantor_name_translate,
-        $guarantor_phone, $reason, $client_profile, $client_address, $title,
-        $status = 1, $client_facebook, $product_id, $agency_code, $latitude, $longitude,
-        $khmer_identity_card;
+    public $breakfast, $lunch, $dinner, $amount_coffee, $coffee_price, $party_expend, $amount_gasoline, $gasoline_price, $remark, $expend_date;
 
     public $app_code;
     public $loan_company_id = 0;
@@ -55,18 +50,6 @@ class Create extends Component
     public $leader_code;
     public $registration_date;
     protected $listeners = ['onChange'];
-    protected $rules = [
-        'shop_name' => 'required',
-        'client_name_translate' => 'required|string|max: 255',
-        'phone' => 'required|string|min:6',
-        'occupation' => 'required',
-        'income' => 'required',
-        'product_id' => 'required',
-        'condition' => 'required',
-        'product_price' => 'required',
-        'city_id' => 'required',
-        'agency_id' => 'required',
-    ];
     public function messages()
     {
         return [
@@ -78,23 +61,6 @@ class Create extends Component
             'agency_id.required' => "The agency field is required."
         ];
     }
-
-    public function updated($propertyName)
-    {
-        $agency = Agency::find($this->agency_id);
-        $this->agency_id = $this->agency_id;
-        $this->agency_code = $agency->code ?? '';
-        if ($agency) {
-            $this->leader = $agency->parent;
-            $this->leader_code = $agency->parent->code ?? '';
-        } else {
-            $this->agency_code = '';
-            $this->leader_code = '';
-            $this->leader = null;
-        }
-        $this->validateOnly($propertyName);
-    }
-
     public function mount()
     {
         $this->registration_date = date('Y-m-d');
@@ -113,48 +79,19 @@ class Create extends Component
 
     public function submit()
     {
-        $this->validate();
-        $create = new Application();
-        $create->code = $this->generate_application_code();
-        $create->agency_id = $this->agency_id;
-        $create->agency_code = $this->agency_code;
-        $create->agency_leader_code = $this->leader_code;
-        $create->client_name = $this->client_name;
-        $create->client_name_translate = $this->client_name_translate;
-        $create->gender = $this->gender;
-        $create->phone = $this->phone;
-        $create->khmer_identity_card = $this->khmer_identity_card;
-        $create->occupation_id = $this->occupation;
-        $create->income = $this->income;
-        $create->shop_id = $this->shop_name;
-        $create->condition = $this->condition;
-        $create->product_id = $this->product_id;
-        $create->product_name = $this->product_name;
-        $create->product_price = $this->product_price;
-        $create->guarantor_name = $this->guarantor_name;
-        $create->guarantor_name_translate = $this->guarantor_name_translate;
-        $create->guarantor_phone = $this->guarantor_phone;
-        $create->status = $this->status;
-        $create->loan_company_id = $this->loan_company_id;
-        $create->respond_by = $this->respond_by;
-        $create->client_facebook = $this->client_facebook;
-        $create->created_by = Auth()->user()->username;
-        $create->created_at = $this->registration_date . ' ' . date("h:i:s");
-        if ($create->save()) {
-            $address = new Address;
-            $address->city_id = $this->city_id;
-            $address->district_id = $this->district_id;
-            $address->commune_id = $this->commune_id;
-            $address->village_id = $this->village_id;
-            $address->house_no = $this->house_no;
-            $address->street_no = $this->street_no;
-            $address->latitude = $this->latitude;
-            $address->longitude = $this->longitude;
-            $address->application_id = $create['id'];
-            $address->save();
-        }
-
-        create_transaction_log(__('Created Application') . ' : ' . $this->client_name, 'Created', __('This user created application') . ' ' . $this->client_name . ' ' . __('successfully') . ' ', $this->client_name);
+        $daily_expend = new Application();
+        $daily_expend->breakfast = $this->breakfast;
+        $daily_expend->lunch = $this->lunch;
+        $daily_expend->dinner = $this->dinner;
+        $daily_expend->amount_coffee = $this->amount_coffee;
+        $daily_expend->coffee_price = $this->coffee_price;
+        $daily_expend->party_expend = $this->party_expend;
+        $daily_expend->gasoline = $this->amount_gasoline;
+        $daily_expend->gasoline_price = $this->gasoline_price;
+        $daily_expend->remark = $this->remark;
+        $daily_expend->created_at = $this->registration_date . ' ' . date("h:i:s");
+        $daily_expend->save();
+        // create_transaction_log(__('Created Application') . ' : ' . $this->client_name, 'Created', __('This user created application') . ' ' . $this->client_name . ' ' . __('successfully') . ' ', $this->client_name);
         $this->dispatch('alert.message', [
             'type' => 'success',
             'message' => __("Application was successfully submitted")

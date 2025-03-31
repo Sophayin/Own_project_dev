@@ -76,8 +76,9 @@ input {
   /*background: #034C72;*/
   border: none;
   color: white;
+  width: 150px !important;
   font-size: 15px;
-  /*border-radius: 0% !important;*/
+  border-radius: 35px !important;
 }
 
 .button_update {

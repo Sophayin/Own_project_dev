@@ -14,7 +14,7 @@ $department = Department::where('slug', '/' . Request::segment(1))->first();
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
         <a href="{{url('/')}}" class="logo d-flex align-items-center">
-            <img src="{{url('assets/svg/logo121.png')}}" alt="Phsar121">
+            <img src="" alt="admin">
             <span class="d-none d-lg-block"></span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
