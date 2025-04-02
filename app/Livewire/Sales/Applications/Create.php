@@ -50,17 +50,7 @@ class Create extends Component
     public $leader_code;
     public $registration_date;
     protected $listeners = ['onChange'];
-    public function messages()
-    {
-        return [
-            "client_name_translate.required" => "The client name (khmer) field is required.",
-            'product_id.required' => 'The product field is required',
-            'phone.required' => 'The phone field must be at least 6 characters.',
-            'city_id.required' => 'The city field is required.',
-            'product_price.required' => "The price field is required.",
-            'agency_id.required' => "The agency field is required."
-        ];
-    }
+
     public function mount()
     {
         $this->registration_date = date('Y-m-d');
@@ -99,71 +89,5 @@ class Create extends Component
         $this->resetExcept('registration_date');
         $this->reset();
         $this->dispatch('refresh_application');
-    }
-
-    //   Generate Application Code
-    public function generate_application_code()
-    {
-        $application = Application::orderBy('id', 'DESC')->first();
-        if ($application) {
-            $code = ($application->code + 1);
-            $app_code = date('y') . substr($code, 2);
-        } else {
-            $app_code = date('y') . '0000001';
-        }
-        return $app_code;
-    }
-
-    // Select product & show price
-    public function FilterProduct($product_id)
-    {
-        $product = Product::Find($product_id);
-        $this->product_name = $product->title ?? '';
-    }
-
-    public function onChange($type, $value)
-    {
-        if ($type == 'city') {
-            $this->city_id = $value;
-            $this->district_id = 0;
-            $this->commune_id = 0;
-        } elseif ($type == 'district') {
-            $this->district_id = $value;
-            $this->commune_id = 0;
-        } elseif ($type == 'commune') {
-            $this->commune_id = $value;
-        }
-        $this->districts = District::where('city_id', $this->city_id)->orderBy('name', 'asc')->get();
-        $this->communes = Commune::where('district_id', $this->district_id)->orderBy('name', 'asc')->get();
-        $this->villages = Village::where('commune_id', $this->commune_id)->orderBy('name', 'asc')->get();
-    }
-    // Add Impermanent address
-    public function saveAddress()
-    {
-        $this->city = City::find($this->city_id);
-        $this->district = District::find($this->district_id);
-        $this->commune = Commune::find($this->commune_id);
-        $this->village = Village::find($this->village_id);
-    }
-
-    public function addGuarantor()
-    {
-        $this->guarantor_name = $this->guarantor_name;
-        $this->guarantor_name_translate = $this->guarantor_name_translate;
-        $this->guarantor_phone = $this->guarantor_phone;
-    }
-
-    public function addressModal()
-    {
-        $this->dispatch('modal.addressModal');
-    }
-    public function guarantorModal()
-    {
-        $this->dispatch('modal.guarantorModal');
-    }
-    // Show Social Media Field
-    public function mediaShow()
-    {
-        $this->facebook = !$this->facebook;
     }
 }

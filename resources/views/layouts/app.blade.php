@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{ env('APP_NAME') }}">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ url('assets/svg/icon121.jpg') }}">
-    <link rel="icon" type="image/jpg" href="{{ url('assets/svg/icon121.jpg') }}">
+    <link rel="icon" type="image/jpg" href="">
     <title>{{ $title ?? env("APP_NAME") }}</title>
     <!--<meta content="" name="description">
   <meta content="" name="keywords">-->

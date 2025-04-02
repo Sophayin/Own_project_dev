@@ -11,7 +11,7 @@
     <section class="section">
         <div class="d-flex mb-3 justify-content-between">
             <div class="p-2 app_section d-flex">
-                <div class="mt-1 text-sm">{{__('Application List')}} - {{__('Status')}}</div>
+                <div class="mt-1 text-sm">{{__('Expense List')}}</div>
             </div>
             <div class="d-flex justify-content-end">
                 <div class="p-2">
@@ -43,83 +43,56 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr class="text_header">
-                            <th class="text-secondary text-center text-sm">{{__('Date')}}</th>
-                            <th class="text-secondary text-sm ">
-                                {{__('Breakfast')}}
-                            </th>
-                            <th class="text-secondary text-sm">
-                                {{__('lunch')}}
-                            </th>
-                            <th class="text-secondary text-sm">
-                                {{__('dinner')}}
-                            </th>
-                            <th class="text-secondary text-sm">
-                                {{__('amount coffee')}}
-                            </th>
-                            <th class="text-secondary text-sm">
-                                {{__('coffee_price')}}
-                            </th>
-                            <th class="text-secondary text-center text-sm">
-                                {{__('gasoline')}}
-                            </th>
-                            <th class="text-secondary text-center text-sm">
-                                {{__('gasoline_price')}}
-                            </th>
-                            <th class="text-secondary text-center text-sm">
-                                {{__('party expend')}}
-                            </th>
-                            <th class="text-secondary text-center text-sm" width="85px">{{__('Action')}}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if($applications->isEmpty())
-                        <tr>
-                            <td colspan="12" class="text-center">{{__("No Record Found.!")}}</td>
-                        </tr>
-                        @else
-                        @foreach($applications as $app)
-                        <tr class="text" style="vertical-align: middle;">
-                            <td class="text-sm text-center">
-                                {{$app->created_at->format('Y-m-d')}}
-                            </td>
-                            <td class="text-sm">
-                                <nobr>៛ {{$app->breakfast}}</nobr>
-                            </td>
-                            <td class="text-sm">
-                                <nobr>៛ {{$app->lunch}}</nobr>
-                            </td>
-                            <td class="text-sm">៛ {{$app->dinner}}</td>
-                            <td class="text-sm">{{$app->amount_coffee}}/ Cup</td>
-                            <td class="text-sm">{{$app->coffee_price}}</td>
-                            <td class="text-sm text-center">
-                                <nobr>{{$app->gasoline}}</nobr>
-                            </td>
-                            <td class="text-sm">{{$app->gasoline_price}}</td>
-                            <td class="text-sm text-center">
-                                {{$app->party_expend}}
-                            </td>
-                            <td class="text-sm text-end">
-                                <nobr>
-                                    @if(!$app->is_payroll)
-                                    <a style="border-color:azure;" wire:click="btn_edit_application({{$app->id}})" class="rounded-pill btn btn-sm btn-outline-success">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    @endif
-                                    <a style=" border-color:azure;" wire:click="btn_preview_application({{$app->id}})" class="rounded-pill btn btn-sm btn-outline-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                </nobr>
-                            </td>
-                        </tr>
-                        @endforeach
-                        @endif
-                    </tbody>
-                </table>
-                {{$applications->links('livewire.customer-pagination')}}
+            <div class="row d-flex p-2">
+                @foreach($applications as $app)
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card bg-primary rounded d-flex">
+                            <div class="d-flex mb-3 justify-content-between">
+                                <div class="p-2 d-flex">
+                                    <div class="mt-1 text-white">{{__('Noted For')}} {{$app->created_at->format('Y-m-d')}}</div>
+                                </div>
+                                <div class="d-flex justify-content-end pointer" wire:click="btn_edit_application({{$app->id}})">
+                                    <div class="p-2">
+                                        <div class="col-lg-12 col-sm-6 text-info">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex p-2">
+                            <div class="col-lg-5 p-2" style="margin-top: -20px;">
+                                <h6 class="p-1"><i class="bi bi-cart-plus p-2"></i> Items</h6>
+                                <h6 class="p-1"> <i class="bi bi-brightness-alt-high-fill p-2"></i> Breakfast</h6>
+                                <h6 class="p-1"> <i class="bi bi-brightness-high-fill p-2"></i> Lunch</h6>
+                                <h6 class="p-1"> <i class="bi bi-brightness-alt-low-fill p-2"></i> Dinner</h6>
+                                <h6 class="p-1"> <i class="bi bi-brightness-high-fill p-2"></i> Coffee X <strong class="text-danger">({{$app->amount_coffee}})</strong></h6>
+                                <h6 class="p-1"> <i class="bi bi-brightness-alt-low-fill p-2"></i> Gasoline</h6>
+                            </div>
+                            <div class="col-lg-7 p-2" style="margin-top: -17px;">
+                                <h6>Item Cost</h6>
+                                <h6 class="mt-4"> <strong>៛ {{number_format($app->breakfast,2)}}</strong></h6>
+                                <h6 class="mt-3"> <strong>៛ {{number_format($app->lunch,2)}}</strong></h6>
+                                <h6 class="mt-3"> <strong>៛ {{number_format($app->dinner,2)}}</strong></h6>
+                                <h6 class="mt-3"> <strong>៛ {{number_format($app->coffee_price,2)}}</strong></h6>
+                                <h6 class="mt-3"> <strong>៛ {{number_format($app->gasoline_price,2)}}</strong></h6>
+                            </div>
+                            <div class="col-lg-12">
+                                <h6 class="p-1"><i class="bi bi-brush p-2"></i> Remark
+                                    <p class="p-3">
+                                        @if($app->remark)
+                                        {{$app->remark}}
+                                        @else
+                                        -
+                                        @endif
+                                    </p>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
     </section>
