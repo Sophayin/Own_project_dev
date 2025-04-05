@@ -13,14 +13,14 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-3">
+            <div class="card mt-3 custom_card">
                 <div class="card-body">
                     <!-- Client_section -->
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-6 mt-2">
                             <label class="form-label text fw-semibold">{{__('Registered Date')}}</label>
                             <div class="input-group">
-                                <input type="date" class="form-control" wire:model="expend_date" placeholder="" />
+                                <input type="date" class="form-control" wire:model="expend_date" placeholder="{{$expend_date}}" />
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                             <input type="text" class="form-control" wire:model="lunch" placeholder="{{__('Enter Lunch expend')}}">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <label class="form-label fw-semibold"> {{__('dinner')}} </label>
+                            <label class="form-label fw-semibold"> {{__('Dinner')}} </label>
                             <input type="text" class="form-control" wire:model="dinner" placeholder="{{__('Enter dinner expend')}}">
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             @error('amount coffee') <small class="invalid-feedback">{{__($message)}}</small> @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <label class="form-label fw-semibold"> {{__('coffee_price')}} </label>
+                            <label class="form-label fw-semibold"> {{__('Coffee Fee')}} </label>
                             <input type="text" class="form-control" wire:model="coffee_price" placeholder="{{__('Enter coffee price')}}">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -64,7 +64,7 @@
                             @error('amount_gasoline') <small class="invalid-feedback">{{__($message)}}</small> @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <label class="form-label fw-semibold"> {{__('Gasoline Expend')}} </label>
+                            <label class="form-label fw-semibold"> {{__('Gasoline Fee')}} </label>
                             <input type="text" class="form-control" wire:model="gasoline_price" placeholder="{{__('Enter gasoline price')}}">
                         </div>
                     </div>

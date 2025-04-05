@@ -48,12 +48,11 @@ class Create extends Component
     public $code;
     public $agency;
     public $leader_code;
-    public $registration_date;
     protected $listeners = ['onChange'];
 
     public function mount()
     {
-        $this->registration_date = date('Y-m-d');
+        $this->expend_date = date('Y-m-d');
     }
 
     public function render()
@@ -79,14 +78,14 @@ class Create extends Component
         $daily_expend->gasoline = $this->amount_gasoline;
         $daily_expend->gasoline_price = $this->gasoline_price;
         $daily_expend->remark = $this->remark;
-        $daily_expend->created_at = $this->registration_date . ' ' . date("h:i:s");
+        $daily_expend->created_at = $this->expend_date . ' ' . date("h:i:s");
         $daily_expend->save();
         // create_transaction_log(__('Created Application') . ' : ' . $this->client_name, 'Created', __('This user created application') . ' ' . $this->client_name . ' ' . __('successfully') . ' ', $this->client_name);
         $this->dispatch('alert.message', [
             'type' => 'success',
             'message' => __("Application was successfully submitted")
         ]);
-        $this->resetExcept('registration_date');
+        $this->resetExcept('expend_date');
         $this->reset();
         $this->dispatch('refresh_application');
     }

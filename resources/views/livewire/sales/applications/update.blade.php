@@ -1,21 +1,17 @@
 <div>
     <section class="section">
         <form wire:submit.prevent="edit">
-            <div class="d-flex pl-3">
-                <h6 class="main_application mt-1">
-                    <a wire:navigate href="{{route('sale.list', 'application')}}"><i class="bi bi-arrow-left-circle-fill"></i> {{__('Back')}} </a>
-                </h6>
-                <h6 class="main_application mt-1">
-                    <i class="bi bi-chevron-right"></i>
-                </h6>
-                <h6 class="main_application mt-1">
-                    {{__('Applications')}}
-                </h6>
-                <h6 class="main_application mt-1">
-                    <i class="bi bi-chevron-right"></i>
-                </h6>
-                <h6 class="main_application mt-1">{{__('Update')}} </h6>
-                <button type="submit" class="btn btn-primary button_save">{{__('Update')}} </button>
+            <div class="d-flex mb-3 justify-content-between">
+                <div class="p-2 d-flex">
+                    <a wire:navigate href="{{route('sale.list', 'application')}}"><i class="bi bi-arrow-left-circle-fill"></i> {{__('Back')}}</a>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="p-2">
+                        <div class="col-lg-12 col-sm-6">
+                            <button type="submit" class="btn btn-primary button_save">{{__('Update')}}</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="card mt-3">
                 <div class="card-body">
@@ -40,7 +36,7 @@
                             <input type="text" class="form-control" wire:model="lunch" placeholder="{{__('Enter Lunch expend')}}">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <label class="form-label fw-semibold"> {{__('dinner')}} </label>
+                            <label class="form-label fw-semibold"> {{__('Dinner')}} </label>
                             <input type="text" class="form-control" wire:model="dinner" placeholder="{{__('Enter dinner expend')}}">
                         </div>
                     </div>
@@ -52,7 +48,7 @@
                             @error('amount coffee') <small class="invalid-feedback">{{__($message)}}</small> @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <label class="form-label fw-semibold"> {{__('coffee_price')}} </label>
+                            <label class="form-label fw-semibold"> {{__('Coffee Fee')}} </label>
                             <input type="text" class="form-control" wire:model="coffee_price" placeholder="{{__('Enter coffee price')}}">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -68,7 +64,7 @@
                             @error('amount_gasoline') <small class="invalid-feedback">{{__($message)}}</small> @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <label class="form-label fw-semibold"> {{__('Gasoline Expend')}} </label>
+                            <label class="form-label fw-semibold"> {{__('Gasoline Fee')}} </label>
                             <input type="text" class="form-control" wire:model="gasoline_price" placeholder="{{__('Enter gasoline price')}}">
                         </div>
                     </div>

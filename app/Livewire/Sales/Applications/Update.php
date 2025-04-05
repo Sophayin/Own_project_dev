@@ -18,7 +18,7 @@ use Livewire\WithFileUploads;
 class Update extends Component
 {
     use WithFileUploads;
-    public $breakfast, $lunch, $dinner, $amount_coffee, $coffee_price, $party_expend, $amount_gasoline, $gasoline_price, $remark, $registration_date;
+    public $breakfast, $lunch, $dinner, $amount_coffee, $coffee_price, $party_expend, $amount_gasoline, $gasoline_price, $remark, $expend_date;
     public $application_id;
     public function mount()
     {
@@ -32,7 +32,7 @@ class Update extends Component
         $this->amount_gasoline = $daily_expend->gasoline_price;
         $this->gasoline_price = $daily_expend->gasoline_price;
         $this->remark = $daily_expend->remark;
-        $this->registration_date = $daily_expend->created_at;
+        $this->expend_date = $daily_expend->created_at->format('Y-m-d');
     }
 
     public function edit()
@@ -47,7 +47,7 @@ class Update extends Component
         $daily_expend->gasoline = $this->amount_gasoline;
         $daily_expend->gasoline_price = $this->gasoline_price;
         $daily_expend->remark = $this->remark;
-        $daily_expend->created_at = $this->registration_date;
+        $daily_expend->created_at = $this->expend_date;
         $daily_expend->save();
         $this->dispatch('alert.message', [
             'type' => 'success',
