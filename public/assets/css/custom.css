@@ -6,12 +6,14 @@
   /*color: white;*/
   /*border-radius: 10px !important;*/
 }
+
 .moul-regular {
   font-family: "Moul", serif;
   font-weight: 400;
   font-style: normal;
 }
-.btn{
+
+.btn {
   /*color: white;*/
   border-radius: 15px !important;
 }
@@ -22,13 +24,16 @@
 .pointer {
   cursor: pointer;
 }
-.btn-primary{
+
+.btn-primary {
   background-color: #034C72;
 }
+
 .btn-primary:hover {
   background-color: #034C72;
   opacity: 0.9;
 }
+
 .button_demote {
   background: #f00004;
   border: none;
@@ -69,15 +74,16 @@ input {
 }
 
 .button_save:hover {
-  background-color: #034C72;
+  background: linear-gradient(40deg, #b46702, #4b2900) !important;
+  color: rgb(236, 236, 236);
 }
 
 .button_save {
-  /*background: #034C72;*/
+  background: linear-gradient(40deg, #583303, #262626) !important;
   border: none;
-  color: white;
   width: 150px !important;
   font-size: 15px;
+  color: rgb(188, 188, 188);
   border-radius: 35px !important;
 }
 
@@ -500,7 +506,8 @@ input[type=file]::-webkit-file-upload-button {
   align-items: center;
   color: #444444;
 }
-.text-sm{
+
+.text-sm {
   font-size: 15px;
 }
 
@@ -585,7 +592,8 @@ input[type=file]::-webkit-file-upload-button {
   margin-top: -20px !important;
   margin-left: -150px !important;
 }
-.box{
+
+.box {
   position: relative;
   width: 35px;
   height: 35px;
@@ -593,7 +601,8 @@ input[type=file]::-webkit-file-upload-button {
   border-radius: 50%;
   margin-right: 10px;
 }
-.flag{
+
+.flag {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -605,16 +614,17 @@ input[type=file]::-webkit-file-upload-button {
 }
 
 /* circle */
-.circle-yellow{
+.circle-yellow {
   position: relative;
   width: 110px;
   height: 110px;
   background-color: white;
   margin-top: -20px;
   border-radius: 50%;
- border: 10px solid rgb(0, 182, 76);
+  border: 10px solid rgb(0, 182, 76);
 }
-.sign{
+
+.sign {
   width: 9px;
   height: 9px;
   background: #0380C0;
@@ -622,77 +632,95 @@ input[type=file]::-webkit-file-upload-button {
   margin-top: 7px;
   border-radius: 50%;
 }
-.Add_bank{
+
+.Add_bank {
   width: 70px;
   height: 35px;
   padding: 5px;
- background: #034C72;
- color: white;
- border-radius: 5px;
- cursor: pointer;
+  background: #034C72;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.Add_bank:hover{
+
+.Add_bank:hover {
   width: 70px;
   height: 35px;
   padding: 5px;
- background: #006ba5;
- color: white;
- border-radius: 5px;
- transition: all linear 0.3s;
- cursor: pointer;
+  background: #006ba5;
+  color: white;
+  border-radius: 5px;
+  transition: all linear 0.3s;
+  cursor: pointer;
 }
 
 /* Custom File upload in Promote and demote */
-.document{
-  border:  2px solid #006ba5;
+.document {
+  border: 2px solid #006ba5;
   border-radius: 10px;
   padding: 5px;
   font-size: 12px;
 }
-.document::-webkit-file-upload-button{
-margin-top: -1px;
-margin-left: 1px;
-background-image: linear-gradient(65deg, rgb(93, 133, 193), rgb(3, 63, 93));
-color: white;
-padding: 5px 15px;
-border-radius: 5px;
-border: none;
+
+.document::-webkit-file-upload-button {
+  margin-top: -1px;
+  margin-left: 1px;
+  background-image: linear-gradient(65deg, rgb(93, 133, 193), rgb(3, 63, 93));
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
 }
-.document::-webkit-file-upload-button:hover{
-margin-top: -1px;
-margin-left: 1px;
-background-color: #1685c1;
-color: rgb(0, 0, 0);
-padding: 5px 15px;
-border-radius: 5px;
-border: none;
+
+.document::-webkit-file-upload-button:hover {
+  margin-top: -1px;
+  margin-left: 1px;
+  background-color: #1685c1;
+  color: rgb(0, 0, 0);
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
 }
 
 /* Application status */
-.application_status:hover{
-color: white !important;
-transition-duration: 500ms;
+.application_status:hover {
+  color: white !important;
+  transition-duration: 500ms;
 }
-.doc_view{
+
+.doc_view {
   border: #006ba5 1px solid;
   padding: 5px;
   border-radius: 5px;
   color: #444444;
 }
-.delete{
+
+.delete {
   background: red;
   border: none;
   color: white;
   font-size: 15px;
   width: 70px !important;
 }
-.index-id{
+
+.index-id {
   width: 5px !important;
 }
-.scrollable{
+
+.scrollable {
   width: 100%;
   overflow: auto;
 }
 
+.custom-input {
+  background-color: #1f2937;
+  color: #f9fafb;
+  border: 1px solid #374151;
+}
 
-
+.custom-input:focus {
+  background-color: #1f2937;
+  border-color: #906c00;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
