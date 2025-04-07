@@ -723,4 +723,6 @@ input[type=file]::-webkit-file-upload-button {
   border-color: #906c00;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   outline: none;
+  color: #f9fafb;
+
 }
