@@ -639,7 +639,7 @@ h6 {
   border: solid 0px #E8EAED;
 
   /* background-color: #fff; */
-  background-color: #000000 !important;
+  background-color: #121212 !important;
 
   /* BB */
 
@@ -742,7 +742,7 @@ h6 {
   color: rgb(188, 188, 188) !important;
   transition: 0.3;
   /* background: #F5F9FF; */
-  background-color: #000000 !important;
+  background-color: #121212 !important;
   border-left: solid 3px;
   /* border-color: #034C72; */
   border-color: #df7300;
@@ -1330,4 +1330,8 @@ h6 {
 
 .form-control {
   border: linear-gradient(40deg, #1d1101, #0f0f0f) !important;
+}
+
+.card-body {
+  background-color: #121212 !important;
 }
