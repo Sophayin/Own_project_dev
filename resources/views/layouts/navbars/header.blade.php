@@ -15,11 +15,10 @@ $department = Department::where('slug', '/' . Request::segment(1))->first();
     <div class="d-flex align-items-center justify-content-between">
         <a href="{{url('/')}}" class="logo d-flex align-items-center">
             <img src="" alt="admin">
-            <span class="d-none d-lg-block"></span>
         </a>
-        <i class="bi bi-list toggle-sidebar-btn"></i>
+        <i class="bi bi-list toggle-sidebar-btn d-none"></i>
     </div>
-    <div class="search-bar">
+    <div class="search-bar" style="margin-left: 31px;">
         @if($department)
         <?php
         $parent = Department::find($department->id);
@@ -57,40 +56,6 @@ $department = Department::where('slug', '/' . Request::segment(1))->first();
             <li class="nav-item d-flex">
                 <livewire:Component.SwitchLanguage />
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                    <i class="bi bi-bell"></i>
-                    <?php $notifications = Notification::orderBy('created_at', 'DESC'); ?>
-                    <span class="badge bg-primary badge-number">
-                        {{$notifications->where('is_read', false)->whereMonth('created_at', date('m'))->count()}}
-                    </span>
-                </a><!-- End Notification Icon -->
-
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                    <li class="dropdown-header">
-                        @if($notifications->where('is_read', false)->count())
-                        {{__('You have')}} {{$notifications->where('is_read', false)->count()}} {{__('new notifications')}}
-                        <a href="{{route('notification')}}" wire:navigate><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                        @else
-
-                        <span>{{__("Empty")}}</span>
-                        @endif
-                    </li>
-
-                    @foreach($notifications->take(6)->get() as $notify)
-                    <li class="notification-item mb-2">
-                        <i>
-                            <img width="35" class="rounded-circle" src="{{staff_profile($notify->agency->agency_profile ?? '')}}">
-                        </i>
-                        <div>
-                            <h6 class="mb-0">{{$notify->title}}</h6>
-                            <p>{{$notify->description}}</p>
-                            <p>{{$notify->created_at->diffForHumans(['parts' => 4, 'join' => ' ', 'short' => true])}}</p>
-                        </div>
-                    </li>
-                    @endforeach
-                </ul><!-- End Notification Dropdown Items -->
-            </li><!-- End Notification Nav -->
             <li class="nav-item dropdown pe-3">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     <img src="{{ staff_profile(Auth::user()->profile) }}" class="rounded-circle" style="border:solid transparent;" alt="{{Auth::user()->name}}">

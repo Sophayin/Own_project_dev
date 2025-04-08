@@ -140,10 +140,10 @@ class DepartmentSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'Sales',
+                'name' => 'Expense',
                 'slug' => '/sale',
                 'type'  => 'list',
-                'language' => ['lang' => 'kh', 'name' => "ការលក់"],
+                'language' => ['lang' => 'kh', 'name' => "ចំណាយ"],
                 'description' => 'sale application form and success application',
                 'status' => true,
                 'icon' => '<i class="bi bi-currency-dollar"></i>',
@@ -161,27 +161,14 @@ class DepartmentSeeder extends Seeder
                             </svg>',
                         'actions' => ['Create Application', 'Edit Application', 'Preview Application', 'Update Application Status', 'Delete Application'],
                         'children' => []
-                    ],
-                    [
-                        'name' => 'Sale',
-                        'slug' => '/sale/list',
-                        'type'  => 'menu',
-                        'language' => ['lang' => 'kh', 'name' => "ការលក់"],
-                        'description' => 'Sale application',
-                        'status' => true,
-                        'icon' => '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 4H9.23077V12H12V4ZM12 0H9.23077V3.2H12V0ZM2.76923 8.8H-5.96046e-08V12H2.76923V8.8ZM2.76923 6.4H-5.96046e-08V8H2.76923V6.4ZM7.38462 6.4H4.61538V12H7.38462V6.4ZM7.38462 3.2H4.61538V5.6H7.38462V3.2Z" fill="currentColor"/>
-                    </svg>',
-                        'actions' => ['Preview Sale'],
-                        'children' => []
                     ]
                 ]
             ],
             [
-                'name' => 'Other Management',
+                'name' => 'Other Expend Management',
                 'slug' => '/manage',
                 'type'  => 'list',
-                'language' => ['lang' => 'kh', 'name' => "គ្រប់គ្រងផ្សេងៗ"],
+                'language' => ['lang' => 'kh', 'name' => "គ្រប់គ្រងចំណាយផ្សេងៗ"],
                 'description' => 'Other management',
                 'status' => true,
                 'icon' => '<i class="bi bi-cart-plus-fill"></i>',

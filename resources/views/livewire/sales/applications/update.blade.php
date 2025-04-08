@@ -2,8 +2,8 @@
     <section class="section">
         <form wire:submit.prevent="edit">
             <div class="d-flex mb-3 justify-content-between">
-                <div class="p-2 d-flex">
-                    <a wire:navigate href="{{route('sale.list', 'application')}}"><i class="bi bi-arrow-left-circle-fill"></i> {{__('Back')}}</a>
+                <div class="p-2 d-flex text">
+                    <a class="text custom-text" wire:navigate href="{{route('sale.list', 'application')}}"><i class="bi bi-arrow-left-circle-fill"></i> {{__('Back')}}</a>
                 </div>
                 <div class="d-flex justify-content-end">
                     <div class="p-2">
@@ -20,58 +20,58 @@
                         <div class="col-lg-4 col-md-6 col-sm-6 mt-2">
                             <label class="form-label text fw-semibold">{{__('Registered Date')}}</label>
                             <div class="input-group">
-                                <input type="date" class="form-control" wire:model="expend_date" placeholder="" />
+                                <input type="date" class="form-control custom-input" wire:model="expend_date" placeholder="" />
                             </div>
                         </div>
                     </div>
                     <div class="row mb-3 mt-1">
-                        <p class="text_section text-dark mt-3 fw-semibold">{{__('Meal Expend')}}</p>
+                        <p class="text_section text mt-3 fw-semibold">{{__('Meal Expend')}}</p>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <label class="form-label fw-semibold">{{__('Breakfast')}} <small class="text-danger">*</small></label>
-                            <input type="text" class="form-control @error('breakfast') is-invalid @enderror" wire:model="breakfast" placeholder="{{__('Enter Breakfast Expend')}}">
+                            <input type="text" class="form-control custom-input @error('breakfast') is-invalid @enderror" wire:model="breakfast" placeholder="{{__('Enter Breakfast Expend')}}">
                             @error('breakfast') <small class="invalid-feedback">{{__($message)}}</small> @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <label class="form-label fw-semibold"> {{__('Lunch')}} </label>
-                            <input type="text" class="form-control" wire:model="lunch" placeholder="{{__('Enter Lunch expend')}}">
+                            <input type="text" class="form-control custom-input" wire:model="lunch" placeholder="{{__('Enter Lunch expend')}}">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <label class="form-label fw-semibold"> {{__('Dinner')}} </label>
-                            <input type="text" class="form-control" wire:model="dinner" placeholder="{{__('Enter dinner expend')}}">
+                            <input type="text" class="form-control custom-input" wire:model="dinner" placeholder="{{__('Enter dinner expend')}}">
                         </div>
                     </div>
                     <div class="row mb-3 mt-1">
-                        <p class="text_section text-dark mt-3 fw-semibold">{{__('Drink Expend')}}</p>
+                        <p class="text_section text mt-3 fw-semibold">{{__('Drink Expend')}}</p>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <label class="form-label fw-semibold">{{__('Amount Coffee')}} <small class="text-danger">*</small></label>
-                            <input type="text" class="form-control @error('amount_coffee') is-invalid @enderror" wire:model="amount_coffee" placeholder="{{__('Enter amount coffee Expend')}}">
+                            <input type="text" class="form-control custom-input @error('amount_coffee') is-invalid @enderror" wire:model="amount_coffee" placeholder="{{__('Enter amount coffee Expend')}}">
                             @error('amount coffee') <small class="invalid-feedback">{{__($message)}}</small> @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <label class="form-label fw-semibold"> {{__('Coffee Fee')}} </label>
-                            <input type="text" class="form-control" wire:model="coffee_price" placeholder="{{__('Enter coffee price')}}">
+                            <input type="text" class="form-control custom-input" wire:model="coffee_price" placeholder="{{__('Enter coffee price')}}">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <label class="form-label fw-semibold"> {{__('Party Expend')}} </label>
-                            <input type="text" class="form-control" wire:model="party_expend" placeholder="{{__('Enter party expend')}}">
+                            <input type="text" class="form-control custom-input" wire:model="party_expend" placeholder="{{__('Enter party expend')}}">
                         </div>
                     </div>
                     <div class="row mb-3 mt-1">
-                        <p class="text_section text-dark mt-3 fw-semibold">{{__('Gasoline')}}</p>
+                        <p class="text_section text mt-3 fw-semibold">{{__('Gasoline')}}</p>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <label class="form-label fw-semibold">{{__('Amount Gasoline')}} <small class="text-danger">*</small></label>
-                            <input type="text" class="form-control @error('amount_coffee') is-invalid @enderror" wire:model="amount_gasoline" placeholder="{{__('Enter amount gasoline Expend')}}">
+                            <input type="text" class="form-control custom-input @error('amount_coffee') is-invalid @enderror" wire:model="amount_gasoline" placeholder="{{__('Enter amount gasoline Expend')}}">
                             @error('amount_gasoline') <small class="invalid-feedback">{{__($message)}}</small> @enderror
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <label class="form-label fw-semibold"> {{__('Gasoline Fee')}} </label>
-                            <input type="text" class="form-control" wire:model="gasoline_price" placeholder="{{__('Enter gasoline price')}}">
+                            <input type="text" class="form-control custom-input" wire:model="gasoline_price" placeholder="{{__('Enter gasoline price')}}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-8">
                             <label class="form-label fw-semibold"> {{__('Remark')}} </label>
-                            <textarea class="form-control" wire:model="remark" rows="3">
+                            <textarea class="form-control custom-input" wire:model="remark" rows="3">
                             </textarea>
                         </div>
                     </div>

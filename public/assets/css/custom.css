@@ -726,3 +726,18 @@ input[type=file]::-webkit-file-upload-button {
   color: #f9fafb;
 
 }
+.btn_login:hover {
+  background: linear-gradient(40deg, #b46702, #4b2900) !important;
+  color: rgb(236, 236, 236);
+}
+
+.btn_login {
+  background: linear-gradient(40deg, #583303, #262626) !important;
+  border: none;
+  font-size: 15px;
+  color: rgb(188, 188, 188);
+  border-radius: 35px !important;
+}
+.custom-text{
+    color: rgb(236, 236, 236) !important;
+}

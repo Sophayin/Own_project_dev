@@ -3,7 +3,7 @@
         <form wire:submit="submit">
             <div class="d-flex mb-3 justify-content-between">
                 <div class="p-2 d-flex text">
-                    <a wire:navigate href="{{route('sale.list', 'application')}}"><i
+                    <a class="custom-text" wire:navigate href="{{route('sale.list', 'application')}}"><i
                             class="bi bi-arrow-left-circle-fill"></i> {{__('Back')}}</a>
                 </div>
                 <div class="d-flex justify-content-end">

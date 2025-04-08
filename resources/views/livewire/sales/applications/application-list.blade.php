@@ -30,16 +30,13 @@
             <div class="mt-2">
                 <div class="d-flex mb-3 justify-content-between">
                     <div class="d-flex p-2">
-                        <!-- <div class="col-lg-6 mt-1 p-2">
-                            <input class="form-control" placeholder="{{__('Type Search...')}}" type="search" wire:model.live.debounce="search">
-                        </div> -->
                         <!-- Date -->
-                        <div class="col-lg-6 d-flex mt-1 p-2">
-                            <div class="input-group">
+                        <div class="col-lg-12 d-flex mt-1 p-2">
+                            <div class="input-group w-50 p-2">
                                 <input type="date" class="input-sm form-control custom-input datepicker"
                                     wire:model="start_date" />
                             </div>
-                            <div class="input-group">
+                            <div class="input-group w-50 p-2">
                                 <input type="date" class="input-sm form-control custom-input datepicker"
                                     wire:model="end_date" />
                             </div>
@@ -80,9 +77,10 @@
                                 <h6 class="p-1"> <i class="bi bi-brightness-alt-high-fill p-2"></i> Breakfast</h6>
                                 <h6 class="p-1"> <i class="bi bi-brightness-high-fill p-2"></i> Lunch</h6>
                                 <h6 class="p-1"> <i class="bi bi-brightness-alt-low-fill p-2"></i> Dinner</h6>
-                                <h6 class="p-1"> <i class="bi bi-brightness-high-fill p-2"></i> Coffee X <strong
+                                <h6 class="p-1"> <i class="bi bi-cup-hot p-2"></i> Coffee X <strong
                                         class="text-danger">({{$app->amount_coffee}})</strong></h6>
-                                <h6 class="p-1"> <i class="bi bi-brightness-alt-low-fill p-2"></i> Gasoline</h6>
+                                <h6 class="p-1"> <i class="bi bi-emoji-sunglasses p-2"></i> Party</h6>
+                                <h6 class="p-1"> <i class="bi bi-fuel-pump-diesel p-2"></i> Gasoline</h6>
                             </div>
                             <div class="col-lg-5 p-2" style="margin-top: -17px;">
                                 <h6>Item Cost</h6>
@@ -90,7 +88,8 @@
                                 <h6 class="mt-3"> <strong>៛ {{number_format($app->lunch,2)}}</strong></h6>
                                 <h6 class="mt-4"> <strong>៛ {{number_format($app->dinner,2)}}</strong></h6>
                                 <h6 class="mt-3"> <strong>$ {{number_format($app->coffee_price,2)}}</strong></h6>
-                                <h6 class="mt-3"> <strong>៛ {{number_format($app->gasoline_price,2)}}</strong></h6>
+                                <h6 class="mt-3"> <strong>$ {{number_format($app->party,2)}}</strong></h6>
+                                <h6 class="mt-3"> <strong>$ {{number_format($app->gasoline_price,2)}}</strong></h6>
                             </div>
                             <div class="col-lg-12">
                                 <h6 class="p-1"><i class="bi bi-brush p-2"></i> Remark
