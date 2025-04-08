@@ -29,7 +29,9 @@ $getDepartment = DB::table("departments")
             $q->where("role_id", $role_id);
         })->first(); ?>
         <li class="nav-item">
-            <a class="nav-link {{ strcmp($depart->slug, '/' . Request::segment(1)) ? 'collapsed' : '' }}" @if(Request::is('/')) href="{{$children->slug ?? ''}}" @else wire:navigate href="{{$children->slug ?? ''}}" @endif>
+            <a class="nav-link {{ strcmp($depart->slug, '/' . Request::segment(1)) ? 'collapsed' : '' }}"
+                @if(Request::is('/')) href="{{$children->slug ?? ''}}" @else wire:navigate
+                href="{{$children->slug ?? ''}}" @endif>
                 <div style="width:19px; margin-right:12px;">
                     <span style="position: relative;top: -2px;">{!! $depart->icon !!}</span>
                 </div>

@@ -3,24 +3,11 @@
         <div class="col-12 ">
             <h5 class="mt-1">Dashboard</h5>
         </div>
-        <div class="col-lg-4 mt-4 ">
-            <div class="col-lg-12 d-flex">
-                <div class="input">
-                    <input type="date" class=" form-control custom-input" id="start_date" wire:model.live="start_date" />
-                </div>
-                <div class="input mt-2">
-                    <i class="bi bi-arrow-right-short"></i>
-                </div>
-                <div class="input">
-                    <input type="date" class=" form-control custom-input" id="end_date" wire:model.live="end_date" />
-                </div>
-            </div>
-        </div>
         <div class="row mt-4">
             <div class="col-lg-4">
                 <div class="card-body p-2">
                     <div class="d-flex justify-content-between p-2">
-                        <h5>Total Expense <small class="text"> (Up to date)</small></h5>
+                        <h5>Current Expense</h5>
                         <h6><i class="bi bi-graph-up-arrow"></i></h6>
                     </div>
                     <div class="p-2">

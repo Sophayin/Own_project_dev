@@ -140,10 +140,10 @@ class DepartmentSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'Expense',
+                'name' => 'Daily Expense',
                 'slug' => '/sale',
                 'type'  => 'list',
-                'language' => ['lang' => 'kh', 'name' => "ចំណាយ"],
+                'language' => ['lang' => 'kh', 'name' => "ចំណាយប្រចាំថ្ងៃ"],
                 'description' => 'sale application form and success application',
                 'status' => true,
                 'icon' => '<i class="bi bi-currency-dollar"></i>',
@@ -165,10 +165,10 @@ class DepartmentSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'Other Expend Management',
+                'name' => 'Other Expend',
                 'slug' => '/manage',
                 'type'  => 'list',
-                'language' => ['lang' => 'kh', 'name' => "គ្រប់គ្រងចំណាយផ្សេងៗ"],
+                'language' => ['lang' => 'kh', 'name' => "ចំណាយផ្សេងៗ"],
                 'description' => 'Other management',
                 'status' => true,
                 'icon' => '<i class="bi bi-cart-plus-fill"></i>',
@@ -201,10 +201,10 @@ class DepartmentSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'Report',
+                'name' => 'Report Expense',
                 'slug' => '/report',
                 'type'  => 'agency',
-                'language' => ['lang' => 'kh', 'name' => "របាយការណ៍"],
+                'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ចំណាយ"],
                 'description' => 'reporting for  management export ',
                 'status' => true,
                 'icon' => '<i class="bi bi-graph-up"></i>',
@@ -242,7 +242,7 @@ class DepartmentSeeder extends Seeder
                 'name' => 'Setting',
                 'slug' => '/setting',
                 'type'  => '',
-                'language' => ['lang' => 'kh', 'name' => "ការកំណត់ផ្សេងៗ"],
+                'language' => ['lang' => 'kh', 'name' => "ការកំណត់"],
                 'description' => 'reporting for management export ',
                 'status' => true,
                 'icon' => '<i class="bi bi-gear-wide-connected"></i>',

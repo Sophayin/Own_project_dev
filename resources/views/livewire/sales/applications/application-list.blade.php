@@ -11,7 +11,17 @@
     <section class="section">
         <div class="d-flex mb-3 justify-content-between">
             <div class="p-2 d-flex">
-                <div class="mt-1 text-sm">{{__('Expense List')}}</div>
+                <!-- Date -->
+                <div class="col-lg-12 d-flex">
+                    <div class="input-group w-50 p-2">
+                        <input type="date" class="input-sm form-control custom-input datepicker"
+                            wire:model="start_date" />
+                    </div>
+                    <div class="input-group w-50 p-2">
+                        <input type="date" class="input-sm form-control custom-input datepicker"
+                            wire:model="end_date" />
+                    </div>
+                </div>
             </div>
             <div class="d-flex justify-content-end">
                 <div class="p-2">
@@ -27,25 +37,27 @@
             </div>
         </div>
         <div class="card">
-            <div class="mt-2">
-                <div class="d-flex mb-3 justify-content-between">
+            <div class="d-flex mb-3">
+                <div class="me-auto p-2">
                     <div class="d-flex p-2">
-                        <!-- Date -->
-                        <div class="col-lg-12 d-flex mt-1 p-2">
-                            <div class="input-group w-50 p-2">
-                                <input type="date" class="input-sm form-control custom-input datepicker"
-                                    wire:model="start_date" />
-                            </div>
-                            <div class="input-group w-50 p-2">
-                                <input type="date" class="input-sm form-control custom-input datepicker"
-                                    wire:model="end_date" />
+
+                    </div>
+                </div>
+                <div class="p-2">
+                    <div class="card-body">
+                        <div class="p-2">
+                            <div class="col-lg-12 col-sm-6">
+                                <h6>{{__('Current Expense')}}</h6>
+                                <h4 class="text-center">${{__('150.00')}}</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-end">
+                </div>
+                <div class="p-2">
+                    <div class="card-body">
                         <div class="p-2">
                             <div class="col-lg-12 col-sm-6">
-                                <h6>{{__('Total For April')}}</h6>
+                                <h6>{{__('Target Expense')}}</h6>
                                 <h4 class="text-center">${{__('150.00')}}</h4>
                             </div>
                         </div>

@@ -12,9 +12,9 @@ if (Auth::user()->role_user) {
 $department = Department::where('slug', '/' . Request::segment(1))->first();
 ?>
 <header id="header" class="header fixed-top d-flex align-items-center">
-    <div class="d-flex align-items-center justify-content-between">
-        <a href="{{url('/')}}" class="logo d-flex align-items-center">
-            <img src="" alt="admin">
+    <div class="d-flex align-items-center justify-content-between text">
+        <a href="" class="logo d-flex align-items-center">
+            <img src="{{asset('assets/auth/image.png')}}" alt="Super Admin">
         </a>
         <i class="bi bi-list toggle-sidebar-btn d-none"></i>
     </div>
@@ -34,7 +34,8 @@ $department = Department::where('slug', '/' . Request::segment(1))->first();
             @foreach($depart_children as $depart)
             <?php $action = $depart->slug == 'user' ? '' : ""; ?>
             <li class="nav-item flex-fill" role="presentation">
-                <a class="nav-link {{ strcmp($depart->slug, '/'.Request::path()) ? '' : 'active'}}" href="{{$depart->slug}}" wire:navigate role="tab">
+                <a class="nav-link {{ strcmp($depart->slug, '/'.Request::path()) ? '' : 'active'}}"
+                    href="{{$depart->slug}}" wire:navigate role="tab">
                     <span style="position: relative;top: -1px; right:4px">{!! $depart->icon !!}</span>
                     <span>{{get_translation($depart)}}</span>
                 </a>
@@ -58,7 +59,8 @@ $department = Department::where('slug', '/' . Request::segment(1))->first();
             </li>
             <li class="nav-item dropdown pe-3">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="{{ staff_profile(Auth::user()->profile) }}" class="rounded-circle" style="border:solid transparent;" alt="{{Auth::user()->name}}">
+                    <img src="{{ staff_profile(Auth::user()->profile) }}" class="rounded-circle"
+                        style="border:solid transparent;" alt="{{Auth::user()->name}}">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
@@ -69,7 +71,8 @@ $department = Department::where('slug', '/' . Request::segment(1))->first();
                         <hr class="dropdown-divider">
                     </li>
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="{{route('user-profile',Auth::user()->id)}}">
+                        <a class="dropdown-item d-flex align-items-center"
+                            href="{{route('user-profile',Auth::user()->id)}}">
                             <i class="bi bi-person"></i>
                             <span>{{__('My Profile')}}</span>
                         </a>
