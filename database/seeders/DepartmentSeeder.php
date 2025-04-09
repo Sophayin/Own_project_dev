@@ -201,6 +201,29 @@ class DepartmentSeeder extends Seeder
                 ]
             ],
             [
+                'name' => 'Target Expense',
+                'slug' => '/target_expense',
+                'type'  => '',
+                'language' => ['lang' => 'kh', 'name' => "កំណត់ចំណាយ"],
+                'description' => 'reporting for management export ',
+                'status' => true,
+                'icon' => '<i class="bi bi-cash-coin"></i>',
+                'actions' => ['Languages', 'Exchange Rage', 'System Logs'],
+                'children' => [
+                    [
+                        'name' => 'Target Expense',
+                        'slug' => '/target_expense',
+                        'language' => ['lang' => 'kh', 'name' => "កំណត់ចំណាយ"],
+                        'description' => 'system hav multipl language',
+                        'status' => true,
+                        'type'  => 'menu',
+                        'icon' => '<i class="bi bi-cash-coin"></i>',
+                        'actions' => ['Change Language'],
+                        'children' => []
+                    ]
+                ]
+            ],
+            [
                 'name' => 'Report Expense',
                 'slug' => '/report',
                 'type'  => 'agency',
@@ -249,9 +272,9 @@ class DepartmentSeeder extends Seeder
                 'actions' => ['Languages', 'Exchange Rage', 'System Logs'],
                 'children' => [
                     [
-                        'name' => 'Languages',
+                        'name' => 'Setting',
                         'slug' => '/setting/language',
-                        'language' => ['lang' => 'kh', 'name' => "ភាសា"],
+                        'language' => ['lang' => 'kh', 'name' => "ការកំណត់"],
                         'description' => 'system hav multipl language',
                         'status' => true,
                         'type'  => 'menu',
@@ -259,31 +282,6 @@ class DepartmentSeeder extends Seeder
                                     <path d="M11.3636 2.45455H5.68182L5.11364 0.75H1.13636C0.511364 0.75 0 1.26136 0 1.88636V10.4091C0 11.0341 0.511364 11.5455 1.13636 11.5455H5.68182L6.25 13.25H11.3636C11.9886 13.25 12.5 12.7386 12.5 12.1136V3.59091C12.5 2.96591 11.9886 2.45455 11.3636 2.45455ZM3.40909 9.27273C1.84091 9.27273 0.568182 8 0.568182 6.43182C0.568182 4.86364 1.84091 3.59091 3.40909 3.59091C4.17614 3.59091 4.81818 3.875 5.3125 4.32955L4.5625 5.05114C4.34659 4.84659 3.97159 4.60795 3.40909 4.60795C2.42045 4.60795 1.61932 5.42614 1.61932 6.43182C1.61932 7.4375 2.42045 8.25568 3.40909 8.25568C4.55114 8.25568 5.02273 7.4375 5.06818 6.88636H3.40909V5.91477H6.06818C6.10795 6.09091 6.13636 6.26136 6.13636 6.49432C6.13636 8.11932 5.05114 9.27273 3.40909 9.27273ZM6.91477 6.19318H9.01705C8.77273 6.90341 8.38636 7.57386 7.85227 8.16477C7.67614 7.96591 7.51136 7.75568 7.36364 7.53977L6.91477 6.19318ZM11.6477 11.8295C11.6477 12.142 11.392 12.3977 11.0795 12.3977H7.38636L8.52273 10.9773L7.93182 9.21591L9.69318 10.9773L10.2159 10.4545L8.34091 8.60795L8.35227 8.59659C8.99432 7.88636 9.44886 7.06818 9.71591 6.19886H10.7955V5.46023H8.22159V4.72727H7.48864V5.46023H6.67045L5.94318 3.30682H11.0795C11.392 3.30682 11.6477 3.5625 11.6477 3.875V11.8295Z" fill="currentColor"/>
                                     </svg>',
                         'actions' => ['Change Language'],
-                        'children' => []
-                    ],
-                    [
-                        'name' => 'Exchange Rate',
-                        'slug' => '/setting/exchange-rate',
-                        'language' => ['lang' => 'kh', 'name' => "អត្រាប្ដូរប្រាក់"],
-                        'description' => 'Exchange Rate ',
-                        'status' => true,
-                        'icon' => '<svg width="25px" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.45778 6.20555C2.81833 5.77944 2.29111 5.33889 2.29111 4.65278C2.29111 3.86556 3.02056 3.31667 4.24111 3.31667C5.52667 3.31667 6.00333 3.93056 6.04667 4.83333H7.64278C7.59222 3.59111 6.83389 2.45 5.32444 2.08167V0.5H3.15778V2.06C1.75667 2.36333 0.63 3.27333 0.63 4.66722C0.63 6.33556 2.00944 7.16611 4.02444 7.65C5.83 8.08333 6.19111 8.71889 6.19111 9.39056C6.19111 9.88889 5.83722 10.6833 4.24111 10.6833C2.75333 10.6833 2.16833 10.0189 2.08889 9.16667H0.5C0.586667 10.7483 1.77111 11.6367 3.15778 11.9328V13.5H5.32444V11.9472C6.73278 11.68 7.85222 10.8639 7.85222 9.38333C7.85222 7.33222 6.09722 6.63167 4.45778 6.20555Z" fill="currentColor"/>
-                                    </svg>
-                                    ',
-                        'actions' => ['Update Exchange Rate'],
-                        'type'  => 'menu',
-                        'children' => []
-                    ],
-                    [
-                        'name' => 'System Logs',
-                        'slug' => '/setting/system-log',
-                        'language' => ['lang' => 'kh', 'name' => "កំណត់ហេតុផ្សេងៗ"],
-                        'description' => 'user Activities ',
-                        'status' => true,
-                        'type'  => 'menu',
-                        'icon' => '<i class="bi bi-justify"></i>',
-                        'actions' => ['View System Logs'],
                         'children' => []
                     ]
                 ]

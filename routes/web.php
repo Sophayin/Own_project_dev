@@ -35,9 +35,11 @@ use App\Livewire\Sales\ManageSale;
 use App\Livewire\Sales\Sale\Preview;
 use App\Livewire\Setting\ExchangeRate;
 use App\Livewire\Setting\ManageSetting;
+use App\Livewire\TargetExpense\TargetExpenseList;
 use App\Livewire\Users\ManageUser;
 use App\Livewire\Users\Role\RoleApplyPermission;
 use App\Livewire\Users\Staff\UserProfile;
+use App\Models\TargetExpense;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -95,6 +97,8 @@ Route::middleware('auth', 'route_permission')->group(function () {
   Route::GET('/report/finance/override-commission-report', OverrideCommissionReport::class)->name('override-commission-report');
   Route::GET('/report/finance/salary-report', SalaryReport::class)->name('report-finance.salary-report');
   Route::GET('/report/finance/allowence-incentive-report', BusinessAllowenceIncentiveReport::class)->name('report-finance.incentive-report');
+
+  Route::GET('/target_expense', TargetExpenseList::class)->name('target-expense');
 
   Route::GET('/setting/{slug}', ManageSetting::class)->name('setting.language');
   Route::GET('/setting/exchange-rate', ExchangeRate::class)->name('setting.exchange-rate');

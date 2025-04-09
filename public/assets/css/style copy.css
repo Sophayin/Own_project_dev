@@ -743,7 +743,8 @@ h6 {
   /* color: #034C72; */
   color: rgb(188, 188, 188) !important;
   transition: 0.3;
-  background: linear-gradient(40deg, #b46702, #4b2900);
+  /* background: #F5F9FF; */
+  background-color: #121212 !important;
   border-left: solid 3px;
   /* border-color: #034C72; */
   border-color: #df7300;
@@ -758,7 +759,7 @@ h6 {
 
 
   /* background: #fff; */
-  background: #111111;
+  background: #151a30;
 
   /*border: none !important;*/
 
