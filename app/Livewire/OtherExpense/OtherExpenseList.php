@@ -10,4 +10,8 @@ class OtherExpenseList extends Component
     {
         return view('livewire.other-expense.other-expense-list');
     }
+    public function btn_add_application()
+    {
+        $this->dispatch('modal.openModal');
+    }
 }

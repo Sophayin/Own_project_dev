@@ -55,9 +55,9 @@ $department = Department::where('slug', '/' . Request::segment(1))->first();
             </li>
             <!-- End Search Icon-->
             <li class="nav-item d-flex">
-                <livewire:Component.SwitchLanguage />
+
             </li>
-            <li class="nav-item dropdown pe-3">
+            <li class="nav-item dropdown pe-3" style="padding: 11px !important;">
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     <img src="{{ staff_profile(Auth::user()->profile) }}" class="rounded-circle"
                         style="border:solid transparent;" alt="{{Auth::user()->name}}">
