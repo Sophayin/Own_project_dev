@@ -261,7 +261,7 @@ option {
 
 /* Toastr_color */
 .colored-toast.swal2-icon-success {
-  background-color: #a5dc86 !important;
+  background: linear-gradient(40deg, #b46702, #4b2900) !important;
 }
 
 .colored-toast.swal2-icon-error {
@@ -740,4 +740,7 @@ input[type=file]::-webkit-file-upload-button {
 }
 .custom-text{
     color: rgb(236, 236, 236) !important;
+}
+.text-default{
+  color: #b46702 !important;
 }

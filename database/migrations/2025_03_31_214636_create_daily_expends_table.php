@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('daily_expends', function (Blueprint $table) {
             $table->id();
+            $table->string('breakfast')->nullable(true);
+            $table->string('lunch')->nullable(true);
+            $table->string('dinner')->nullable(true);
+            $table->string('amount_coffee')->nullable(true);
+            $table->string('coffee_price')->nullable(true);
+            $table->string('gasoline')->nullable(true);
+            $table->string('gasoline_price')->nullable(true);
+            $table->string('party_expend')->nullable(true);
+            $table->string('remark')->nullable(true);
             $table->timestamps();
         });
     }

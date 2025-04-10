@@ -34,8 +34,4 @@ class Address extends Model
     {
         return $this->belongsTo(Village::class);
     }
-    public function agency()
-    {
-        return $this->hasOne(Agency::class);
-    }
 }

@@ -25,78 +25,7 @@ class DepartmentSeeder extends Seeder
                 'status' => true,
                 'icon' => '<i class="bi bi-house-gear-fill"></i>',
                 'actions' => ['View Dashboard', 'Customize Dashboard'],
-                'children' => [
-                    [
-                        'name' => 'New Recruit',
-                        'slug' => '/',
-                        'type'  => 'dashboard',
-                        'language' => ['lang' => 'kh', 'name' => 'អ្នកប្រើ'],
-                        'description' => 'user management',
-                        'status' => true,
-                        'type' => '',
-                        'icon' => '<svg width="15px" height="17px" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 0.5C4.032 0.5 0 4.532 0 9.5C0 14.468 4.032 18.5 9 18.5C13.968 18.5 18 14.468 18 9.5C18 4.532 13.968 0.5 9 0.5ZM12.249 6.206C13.212 6.206 13.986 6.98 13.986 7.943C13.986 8.906 13.212 9.68 12.249 9.68C11.286 9.68 10.512 8.906 10.512 7.943C10.503 6.98 11.286 6.206 12.249 6.206ZM6.849 4.784C8.019 4.784 8.973 5.738 8.973 6.908C8.973 8.078 8.019 9.032 6.849 9.032C5.679 9.032 4.725 8.078 4.725 6.908C4.725 5.729 5.67 4.784 6.849 4.784ZM6.849 13.001V16.376C4.689 15.701 2.979 14.036 2.223 11.912C3.168 10.904 5.526 10.391 6.849 10.391C7.326 10.391 7.929 10.463 8.559 10.589C7.083 11.372 6.849 12.407 6.849 13.001ZM9 16.7C8.757 16.7 8.523 16.691 8.289 16.664V13.001C8.289 11.723 10.935 11.084 12.249 11.084C13.212 11.084 14.877 11.435 15.705 12.119C14.652 14.792 12.051 16.7 9 16.7Z" fill="currentColor"/>
-                            </svg>',
-                        'actions' => ['View New Recruit'],
-                        'children' => []
-                    ],
-                    [
-                        'name' => 'Top Sale',
-                        'slug' => '/',
-                        'type'  => 'dashboard',
-                        'language' => ['lang' => 'kh', 'name' => 'អ្នកប្រើ'],
-                        'description' => 'user management',
-                        'status' => true,
-                        'type' => '',
-                        'icon' => '<svg width="15px" height="17px" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 0.5C4.032 0.5 0 4.532 0 9.5C0 14.468 4.032 18.5 9 18.5C13.968 18.5 18 14.468 18 9.5C18 4.532 13.968 0.5 9 0.5ZM12.249 6.206C13.212 6.206 13.986 6.98 13.986 7.943C13.986 8.906 13.212 9.68 12.249 9.68C11.286 9.68 10.512 8.906 10.512 7.943C10.503 6.98 11.286 6.206 12.249 6.206ZM6.849 4.784C8.019 4.784 8.973 5.738 8.973 6.908C8.973 8.078 8.019 9.032 6.849 9.032C5.679 9.032 4.725 8.078 4.725 6.908C4.725 5.729 5.67 4.784 6.849 4.784ZM6.849 13.001V16.376C4.689 15.701 2.979 14.036 2.223 11.912C3.168 10.904 5.526 10.391 6.849 10.391C7.326 10.391 7.929 10.463 8.559 10.589C7.083 11.372 6.849 12.407 6.849 13.001ZM9 16.7C8.757 16.7 8.523 16.691 8.289 16.664V13.001C8.289 11.723 10.935 11.084 12.249 11.084C13.212 11.084 14.877 11.435 15.705 12.119C14.652 14.792 12.051 16.7 9 16.7Z" fill="currentColor"/>
-                            </svg>',
-                        'actions' => ['View Top Sale'],
-                        'children' => []
-                    ],
-                    [
-                        'name' => 'Top Product',
-                        'slug' => '/',
-                        'type'  => 'dashboard',
-                        'language' => ['lang' => 'kh', 'name' => 'ផលិតផលពេញនិយម'],
-                        'description' => 'user management',
-                        'status' => true,
-                        'type' => '',
-                        'icon' => '<svg width="15px" height="17px" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 0.5C4.032 0.5 0 4.532 0 9.5C0 14.468 4.032 18.5 9 18.5C13.968 18.5 18 14.468 18 9.5C18 4.532 13.968 0.5 9 0.5ZM12.249 6.206C13.212 6.206 13.986 6.98 13.986 7.943C13.986 8.906 13.212 9.68 12.249 9.68C11.286 9.68 10.512 8.906 10.512 7.943C10.503 6.98 11.286 6.206 12.249 6.206ZM6.849 4.784C8.019 4.784 8.973 5.738 8.973 6.908C8.973 8.078 8.019 9.032 6.849 9.032C5.679 9.032 4.725 8.078 4.725 6.908C4.725 5.729 5.67 4.784 6.849 4.784ZM6.849 13.001V16.376C4.689 15.701 2.979 14.036 2.223 11.912C3.168 10.904 5.526 10.391 6.849 10.391C7.326 10.391 7.929 10.463 8.559 10.589C7.083 11.372 6.849 12.407 6.849 13.001ZM9 16.7C8.757 16.7 8.523 16.691 8.289 16.664V13.001C8.289 11.723 10.935 11.084 12.249 11.084C13.212 11.084 14.877 11.435 15.705 12.119C14.652 14.792 12.051 16.7 9 16.7Z" fill="currentColor"/>
-                            </svg>',
-                        'actions' => ['View To Product'],
-                        'children' => []
-                    ],
-                    [
-                        'name' => 'Top Shop',
-                        'slug' => '/',
-                        'type'  => 'dashboard',
-                        'language' => ['lang' => 'kh', 'name' => 'ហាងលក់ដាច់ខ្លាំង'],
-                        'description' => 'user management',
-                        'status' => true,
-                        'type' => '',
-                        'icon' => '<svg width="15px" height="17px" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 0.5C4.032 0.5 0 4.532 0 9.5C0 14.468 4.032 18.5 9 18.5C13.968 18.5 18 14.468 18 9.5C18 4.532 13.968 0.5 9 0.5ZM12.249 6.206C13.212 6.206 13.986 6.98 13.986 7.943C13.986 8.906 13.212 9.68 12.249 9.68C11.286 9.68 10.512 8.906 10.512 7.943C10.503 6.98 11.286 6.206 12.249 6.206ZM6.849 4.784C8.019 4.784 8.973 5.738 8.973 6.908C8.973 8.078 8.019 9.032 6.849 9.032C5.679 9.032 4.725 8.078 4.725 6.908C4.725 5.729 5.67 4.784 6.849 4.784ZM6.849 13.001V16.376C4.689 15.701 2.979 14.036 2.223 11.912C3.168 10.904 5.526 10.391 6.849 10.391C7.326 10.391 7.929 10.463 8.559 10.589C7.083 11.372 6.849 12.407 6.849 13.001ZM9 16.7C8.757 16.7 8.523 16.691 8.289 16.664V13.001C8.289 11.723 10.935 11.084 12.249 11.084C13.212 11.084 14.877 11.435 15.705 12.119C14.652 14.792 12.051 16.7 9 16.7Z" fill="currentColor"/>
-                            </svg>',
-                        'actions' => ['View Top Shop'],
-                        'children' => []
-                    ],
-                    [
-                        'name' => 'Recent Activities',
-                        'slug' => '/',
-                        'type'  => 'dashboard',
-                        'language' => ['lang' => 'kh', 'name' => 'សកម្មភាពថ្មីៗ'],
-                        'description' => 'user management',
-                        'status' => true,
-                        'type' => '',
-                        'icon' => '<svg width="15px" height="17px" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 0.5C4.032 0.5 0 4.532 0 9.5C0 14.468 4.032 18.5 9 18.5C13.968 18.5 18 14.468 18 9.5C18 4.532 13.968 0.5 9 0.5ZM12.249 6.206C13.212 6.206 13.986 6.98 13.986 7.943C13.986 8.906 13.212 9.68 12.249 9.68C11.286 9.68 10.512 8.906 10.512 7.943C10.503 6.98 11.286 6.206 12.249 6.206ZM6.849 4.784C8.019 4.784 8.973 5.738 8.973 6.908C8.973 8.078 8.019 9.032 6.849 9.032C5.679 9.032 4.725 8.078 4.725 6.908C4.725 5.729 5.67 4.784 6.849 4.784ZM6.849 13.001V16.376C4.689 15.701 2.979 14.036 2.223 11.912C3.168 10.904 5.526 10.391 6.849 10.391C7.326 10.391 7.929 10.463 8.559 10.589C7.083 11.372 6.849 12.407 6.849 13.001ZM9 16.7C8.757 16.7 8.523 16.691 8.289 16.664V13.001C8.289 11.723 10.935 11.084 12.249 11.084C13.212 11.084 14.877 11.435 15.705 12.119C14.652 14.792 12.051 16.7 9 16.7Z" fill="currentColor"/>
-                            </svg>',
-                        'actions' => ['View Recent Activities'],
-                        'children' => []
-                    ]
-                ]
+                'children' => []
             ],
             [
                 'name' => 'User Management',
@@ -141,7 +70,7 @@ class DepartmentSeeder extends Seeder
             ],
             [
                 'name' => 'Daily Expense',
-                'slug' => '/sale',
+                'slug' => '/daily-expense',
                 'type'  => 'list',
                 'language' => ['lang' => 'kh', 'name' => "ចំណាយប្រចាំថ្ងៃ"],
                 'description' => 'sale application form and success application',
@@ -151,9 +80,9 @@ class DepartmentSeeder extends Seeder
                 'children' => [
                     [
                         'name' => 'Application',
-                        'slug' => '/sale/application',
+                        'slug' => '/daily-expense',
                         'type'  => 'menu',
-                        'language' => ['lang' => 'kh', 'name' => "សំណើរអតិថិជន"],
+                        'language' => ['lang' => 'kh', 'name' => "ចំណាយប្រចាំថ្ងៃ"],
                         'description' => 'application form',
                         'status' => true,
                         'icon' => '<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,7 +95,7 @@ class DepartmentSeeder extends Seeder
             ],
             [
                 'name' => 'Other Expend',
-                'slug' => '/manage',
+                'slug' => '/other-expense',
                 'type'  => 'list',
                 'language' => ['lang' => 'kh', 'name' => "ចំណាយផ្សេងៗ"],
                 'description' => 'Other management',
@@ -175,34 +104,22 @@ class DepartmentSeeder extends Seeder
                 'actions' => ['Shop', 'Product'],
                 'children' => [
                     [
-                        'name' => 'Shop',
-                        'slug' => '/manage/shop',
+                        'name' => 'Other Expend',
+                        'slug' => '/other-expense',
                         'type'  => '',
-                        'language' => ['lang' => 'kh', 'name' => 'ហាង'],
-                        'description' => 'Shop management',
+                        'language' => ['lang' => 'kh', 'name' => 'ចំណាយផ្សេងៗ'],
+                        'description' => 'Other Expense management',
                         'status' => true,
                         'type' => 'menu',
                         'icon' => '<i class="bi bi-shop"></i>',
-                        'actions' => ['Create Shop', 'Edit Shop', "View Shop", "Assign User Shop"],
-                        'children' => []
-                    ],
-                    [
-                        'name' => 'Product',
-                        'slug' => '/manage/product',
-                        'type'  => '',
-                        'language' => ['lang' => 'kh', 'name' => 'ទំនិញ'],
-                        'description' => 'Product management',
-                        'status' => true,
-                        'type' => 'menu',
-                        'icon' => '<i class="bi bi-list-ul"></i>',
-                        'actions' => ['Create Product', 'Edit Product', 'View Product'],
+                        'actions' => ['Create Other Expense', 'Edit Other Expense'],
                         'children' => []
                     ]
                 ]
             ],
             [
                 'name' => 'Target Expense',
-                'slug' => '/target_expense',
+                'slug' => '/target-expense',
                 'type'  => '',
                 'language' => ['lang' => 'kh', 'name' => "កំណត់ចំណាយ"],
                 'description' => 'reporting for management export ',
@@ -212,7 +129,7 @@ class DepartmentSeeder extends Seeder
                 'children' => [
                     [
                         'name' => 'Target Expense',
-                        'slug' => '/target_expense',
+                        'slug' => '/target-expense',
                         'language' => ['lang' => 'kh', 'name' => "កំណត់ចំណាយ"],
                         'description' => 'system hav multipl language',
                         'status' => true,
@@ -234,10 +151,10 @@ class DepartmentSeeder extends Seeder
                 'actions' => ['Agency Report', 'Finance Report'],
                 'children' => [
                     [
-                        'name' => 'Sale Summary Report by Company',
-                        'slug' => '/report/agency',
+                        'name' => 'Daily Expense Report',
+                        'slug' => '/report/daily-expense-report',
                         'type'  => 'menu',
-                        'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ភា្នក់ងារប្រឹក្សា"],
+                        'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ចំណាយប្រចាំថ្ងៃ"],
                         'description' => 'agency payroll by monthly and commission fee ',
                         'status' => true,
                         'icon' => '<svg width="15" height="15" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -247,10 +164,10 @@ class DepartmentSeeder extends Seeder
                         'children' => []
                     ],
                     [
-                        'name' => 'Finance Report',
-                        'slug' => '/report/finance',
+                        'name' => 'Monthly Expense Report',
+                        'slug' => '/report/monthly-expense-report',
                         'type'  => 'menu',
-                        'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ហិរញ្ញវត្ថុ"],
+                        'language' => ['lang' => 'kh', 'name' => "របាយការណ៍ចំណាយប្រចាំខែ"],
                         'description' => 'finace payroll by monthly and commission fee ',
                         'status' => true,
                         'icon' => '<svg width="15px" height="15px" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
