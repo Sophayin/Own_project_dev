@@ -2,16 +2,45 @@
 
 namespace App\Livewire\OtherExpense;
 
+use App\Models\OtherExpense;
 use Livewire\Component;
 
 class OtherExpenseList extends Component
 {
+    public $cloth;
+    public $cloth_price;
+    public $accessary;
+    public $accessary_price;
+    public $event;
+    public $event_expense;
+    public $taxi;
+    public $taxi_fee;
+    public $remark;
+    public $expend_date;
+    public $other_expends = [];
+
     public function render()
     {
+        $this->other_expends = OtherExpense::all();
         return view('livewire.other-expense.other-expense-list');
     }
     public function btn_add_application()
     {
         $this->dispatch('modal.openModal');
+    }
+    public function submit()
+    {
+        $other_expend = new OtherExpense();
+        $other_expend->cloth = $this->cloth;
+        $other_expend->cloth_price = $this->cloth_price;
+        $other_expend->accessary = $this->accessary;
+        $other_expend->accessary_price = $this->accessary_price;
+        $other_expend->event = $this->event;
+        $other_expend->event_expense = $this->event_expense;
+        $other_expend->taxi = $this->taxi;
+        $other_expend->taxi_fee = $this->taxi_fee;
+        $other_expend->remark = $this->remark;
+        $other_expend->created_at = $this->expend_date . ' ' . date("h:i:s");
+        $other_expend->save();
     }
 }
