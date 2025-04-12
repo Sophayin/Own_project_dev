@@ -6,12 +6,12 @@
                     <div class="card-body">
                         <div class=" d-flex justify-content-between mt-3">
                             <h5>{{__('User List')}}</h5>
-                            <a wire:click="open_modal_register" class="btn btn-primary">
+                            <a wire:click="open_modal_register" class="btn btn-primary button_save p-2">
                                 <i class="bi bi-plus-circle"></i>
                                 {{__('Add New')}}
                             </a>
                         </div>
-                        <table class="table table-sm table-hover">
+                        <table class="table table-sm table-hover bg-none mt-3">
                             <thead>
                                 <tr>
                                     <th width="30" class="text-center text-secondary text-sm opacity-7">{{__('No.')}}</th>

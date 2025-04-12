@@ -38,7 +38,7 @@
                 ?>
                 @foreach($daily_expends as $daily)
                 <?php
-                $dollar_cash = $daily->coffee_price + $daily->gasoline_price + $daily->party;
+                $dollar_cash = $daily->coffee_price + $daily->gasoline_price + $daily->party_expend;
                 $riel_cash = $daily->breakfast + $daily->lunch + $daily->dinner;
                 $total_current_expense += ($riel_cash / 4000) + $dollar_cash;
                 ?>
@@ -47,8 +47,21 @@
                     <div class="card-body">
                         <div class="p-2">
                             <div class="col-lg-12 col-sm-6">
-                                <h6>{{__('Remain Balance')}}</h6>
-                                <h4 class="text-center">$ {{number_format(abs($total_current_expense - $amount),2)}}
+                                <h6>
+
+                                    @if($total_current_expense> $amount)
+                                    {{__('Over Expect')}}
+                                    @else
+                                    {{__('Remain Balance')}}
+                                    @endif
+                                </h6>
+                                <h4 class="text-center">
+                                    $
+                                    @if($total_current_expense> $amount)
+                                    - {{number_format(abs($total_current_expense - $amount),2)}}
+                                    @else
+                                    {{number_format(abs($total_current_expense - $amount),2)}}
+                                    @endif
                                 </h4>
                             </div>
                         </div>
@@ -82,7 +95,7 @@
                     ?>
                     @foreach($daily_expends as $daily)
                     <?php
-                    $dollar_cash = $daily->coffee_price + $daily->gasoline_price + $daily->party;
+                    $dollar_cash = $daily->coffee_price + $daily->gasoline_price + $daily->party_expend;
                     $riel_cash = $daily->breakfast + $daily->lunch + $daily->dinner;
                     $total_current_expense = ($riel_cash / 4000) + $dollar_cash;
                     ?>
@@ -123,7 +136,7 @@
                                         <h6 class="mt-4"> <strong>៛ {{number_format($daily->dinner,2)}}</strong></h6>
                                         <h6 class="mt-3"> <strong>$ {{number_format($daily->coffee_price,2)}}</strong>
                                         </h6>
-                                        <h6 class="mt-3"> <strong>$ {{number_format($daily->party,2)}}</strong></h6>
+                                        <h6 class="mt-3"> <strong>$ {{number_format($daily->party_expend,2)}}</strong></h6>
                                         <h6 class="mt-3"> <strong>$ {{number_format($daily->gasoline_price,2)}}</strong>
                                         </h6>
                                     </div>

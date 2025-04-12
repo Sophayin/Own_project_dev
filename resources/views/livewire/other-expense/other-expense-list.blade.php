@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-end pointer"
-                                        wire:click="update_expend()">
+                                        wire:click="update_other_expend({{$expend->id}})">
                                         <div class="p-2">
                                             <div class="col-lg-12 col-sm-6 text-default">
                                                 <i class="bi bi-pencil-square"></i>
@@ -100,5 +100,6 @@
             </div>
         </div>
         @include('livewire.other-expense.create-other-expend')
+        @livewire('other-expense.update-other-expense')
     </section>
 </div>

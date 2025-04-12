@@ -22,7 +22,6 @@ class UpdateDailyExpend extends Component
     public $end_date;
     public $city_id;
     public $expend_id;
-    protected $queryString = ['action', 'application_id'];
     protected $listeners = ['edit_expend'];
 
     public function render()
@@ -33,7 +32,6 @@ class UpdateDailyExpend extends Component
     {
         $this->start_date = now()->startOfMonth()->toDateString();
         $this->end_date = now()->endOfMonth()->toDateString();
-        $this->expend_date = date('Y-m-d');
     }
     public function edit_expend($expendId)
     {
@@ -48,6 +46,7 @@ class UpdateDailyExpend extends Component
         $this->amount_gasoline = $daily_expend->gasoline_price;
         $this->gasoline_price = $daily_expend->gasoline_price;
         $this->remark = $daily_expend->remark;
+        $this->expend_date = $daily_expend->created_at->format('Y-m-d');
     }
     public function edit()
     {
@@ -65,7 +64,7 @@ class UpdateDailyExpend extends Component
         $daily_expend->save();
         $this->dispatch('alert.message', [
             'type' => 'success',
-            'message' => __('Application has been successfully updated'),
+            'message' => __('Daily expend has been successfully updated'),
         ]);
         $this->dispatch('modal.closeModalUpdate');
     }

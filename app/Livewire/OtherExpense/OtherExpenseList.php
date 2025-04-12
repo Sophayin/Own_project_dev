@@ -42,5 +42,16 @@ class OtherExpenseList extends Component
         $other_expend->remark = $this->remark;
         $other_expend->created_at = $this->expend_date . ' ' . date("h:i:s");
         $other_expend->save();
+        $this->dispatch('alert.message', [
+            'type' => 'success',
+            'message' => __("Expend was successfully submitted")
+        ]);
+    }
+
+    public $expend_id;
+    public function update_other_expend($expend_id)
+    {
+        $this->dispatch('modal.openModalUpdate');
+        $this->dispatch('edit_other_expend', expendId: $expend_id);
     }
 }

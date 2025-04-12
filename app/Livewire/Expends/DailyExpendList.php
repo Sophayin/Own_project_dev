@@ -35,7 +35,7 @@ class DailyExpendList extends Component
         if ($this->start_date && $this->end_date) {
             $daily_expends = $daily_expends->whereBetween('created_at', [$this->start_date . ' 00:00:00 ', $this->end_date . ' 23:59:59 ']);
         }
-        $daily_expends = $daily_expends->orderBy('created_at', 'DESC')->paginate(10);
+        $daily_expends = $daily_expends->orderBy('created_at', 'DESC')->get();
         return view('livewire.expends.daily-expend-list', ['daily_expends' => $daily_expends]);
     }
 
@@ -85,22 +85,10 @@ class DailyExpendList extends Component
         $this->dispatch('refresh_application');
     }
 
-
     public $expend_id;
     public function update_expend($expend_id)
     {
         $this->dispatch('modal.openModalUpdate');
         $this->dispatch('edit_expend', expendId: $expend_id);
-    }
-    public function btn_preview_application($application_id)
-    {
-        if (in_array('Preview Application', session('user_permission')['Application'])) {
-            $this->redirect(route('sale.list', 'application?action=view&application_id=' . $application_id), navigate: true);
-        } else {
-            $this->dispatch("alert.message", [
-                'type' => 'warning',
-                'message' => __("Access Denied! You don't have permission to access this function. Request access from your administrator")
-            ]);
-        }
     }
 }
