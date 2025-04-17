@@ -11,63 +11,55 @@
                                 {{__('Add New')}}
                             </a>
                         </div>
-                        <table class="table table-sm table-hover bg-none mt-3">
-                            <thead>
-                                <tr>
-                                    <th width="30" class="text-center text-secondary text-sm opacity-7">{{__('No.')}}</th>
-                                    <th class="text-center text-secondary text-sm opacity-7">{{__('Picture')}}</th>
-                                    <th class="text-center text-secondary text-sm opacity-7">{{__('Full Name')}}</th>
-                                    <th class="text-center text-secondary text-sm opacity-7">{{__('UserName')}}</th>
-                                    <th class="text-center text-secondary text-sm opacity-7">{{__('Email')}}</th>
-                                    <th class="text-center text-secondary text-sm opacity-7">{{__('Phone Number')}}</th>
-                                    <th class="text-center text-secondary text-sm opacity-7">{{__('Position')}}</th>
-                                    <th width="120" class="text-center text-secondary text-sm opacity-7">{{__('Action')}}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $n = 1; ?>
-                                @foreach($staff as $key => $item)
-                                <tr style="vertical-align:middle" class="text-center">
-                                    <td scope="row">{{$n++}}</td>
-                                    <td>
-                                        <img src="{{ staff_profile($item->user->profile) }}" width="45" height="75" class="d-block img-thumbnail" style="border:solid transparent;" alt="{{$item->user->name}}">
-                                    </td>
-                                    <td class="text-sm">{{$item->user->name}}</td>
-                                    <td class="text-sm">{{$item->user->username}}</td>
-                                    <td class="text-sm">{{$item->user->email}}</td>
-                                    <td class="text-sm">{{$item->user->phone}}</td>
-                                    <td class="text-sm">{{$item->role->name}}</td>
-                                    <td class="text-sm" align="center">
-                                        <a style="border-color:azure;" wire:click="edit_current_password({{ $item->id }})" class="rounded-pill btn btn-sm btn-outline-secondary">
-                                            <i style="font-size: 1.2rem;" class="bi bi-person-lock"></i>
-                                        </a>
-                                        <a style="border-color:azure;" wire:click="edit_user({{ $item->user_id }})" class="rounded-pill btn btn-sm btn btn-outline-success">
-                                            <i class="bi bi-pencil-square"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        <div class="row  mb-3 mt-3">
-                            @if($staff->count())
-                            <div class="col-sm-1">
-                                <select class="form-select" wire:model.live="limit" aria-label="Default">
-                                    <option value="15">15</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php $n = 1; ?>
+        @foreach($staff as $key => $item)
+        <div class="col-lg-3 mb-4">
+            <div class="card-body mb-4">
+                <div class="border-0 shadow-sm">
+                    <div class="d-flex mb-3 justify-content-between">
+                        <div class="p-2 d-flex">
+                            <div class="">
+                                <a wire:click="edit_current_password({{ $item->id }})" class="text-default rounded-pill btn btn-sm">
+                                    <i style="font-size: 1.2rem;" class="bi bi-person-lock"></i>
+                                </a>
                             </div>
-                            @endif
-                            <div class="col ">
-                                {{$staff->links('livewire.customer-pagination')}}
+                        </div>
+                        <div class="d-flex justify-content-end pointer">
+                            <div class="p-2 mt-1">
+                                <div class="col-lg-12 col-sm-6 text-default">
+                                    <a wire:click="edit_user({{ $item->user_id }})" class="rounded-pill btn btn-sm btn text-default">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex p-1">
+                        <div class="col-lg-6 p-2" style="margin-top: -20px;">
+                            <h6 class="p-1"><i class="bi bi-cart-plus p-2"></i> Username</h6>
+                            <h6 class="p-1"> <i class="bi bi-brightness-alt-high-fill p-2"></i> Full Name
+                            </h6>
+                            <h6 class="p-1"> <i class="bi bi-brightness-high-fill p-2"></i> Email</h6>
+                            <h6 class="p-1"> <i class="bi bi-brightness-alt-low-fill p-2"></i> Phone</h6>
+                            <h6 class="p-1"> <i class="bi bi-cup-hot p-2"></i> Position <strong
+                                    class="text-danger"></strong></h6>
+                        </div>
+                        <div class="col-lg-6 p-2" style="margin-top: -17px;">
+                            <h6>{{$item->user->username}}</h6>
+                            <h6 class="mt-3"> <strong>{{$item->user->name}} </strong></h6>
+                            <h6 class="mt-3"> <strong>{{$item->user->email}} </strong></h6>
+                            <h6 class="mt-4"> <strong>{{$item->user->phone}} </strong></h6>
+                            <h6 class="mt-3"> <strong>{{$item->role->name?? ''}} </strong></h6>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
     </section>
 
     @livewire('users.staff.staff-create')

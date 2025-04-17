@@ -39,5 +39,8 @@ $getDepartment = DB::table("departments")
             </a>
         </li>
         @endforeach
+        <hr>
+        <livewire:Auth.logout />
+
     </ul>
 </aside>

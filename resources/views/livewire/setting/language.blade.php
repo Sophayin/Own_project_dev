@@ -9,10 +9,7 @@
                         <div class="d-flex justify-content-between mt-3">
                             <div class="row mb-2">
                                 <div class="col">
-                                    <select wire:change="onSwitchLanguage" wire:model="lang" class="form-select">
-                                        <option value="en">English</option>
-                                        <option value="kh">ខ្មែរ</option>
-                                    </select>
+                                    <livewire:component.SwitchLanguage />
                                 </div>
                             </div>
                         </div>

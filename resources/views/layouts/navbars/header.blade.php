@@ -11,14 +11,14 @@ if (Auth::user()->role_user) {
 }
 $department = Department::where('slug', '/' . Request::segment(1))->first();
 ?>
-<header id="header" class="header fixed-top d-flex align-items-center">
+<header id="header" class="header fixed-top d-flex align-items-center p-2" style="padding: 10px !important;">
     <div class="d-flex align-items-center justify-content-between text">
         <a href="" class="logo d-flex align-items-center">
             <img src="{{asset('assets/auth/image.png')}}" alt="Super Admin">
         </a>
         <i class="bi bi-list toggle-sidebar-btn d-none"></i>
     </div>
-    <div class="search-bar" style="margin-left: 31px;">
+    <div class="search-bar" style="margin-left: 40px;">
         @if($department)
         <?php
         $parent = Department::find($department->id);
@@ -55,40 +55,7 @@ $department = Department::where('slug', '/' . Request::segment(1))->first();
             </li>
             <!-- End Search Icon-->
             <li class="nav-item d-flex">
-
             </li>
-            <li class="nav-item dropdown pe-3" style="padding: 11px !important;">
-                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="{{ staff_profile(Auth::user()->profile) }}" class="rounded-circle"
-                        style="border:solid transparent;" alt="{{Auth::user()->name}}">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                    <li class="dropdown-header">
-                        <h6>{{Auth::user()->name}}</h6>
-                        <span>{{Auth::user()->staff->role->name ?? ""}}</span>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center"
-                            href="{{route('user-profile',Auth::user()->id)}}">
-                            <i class="bi bi-person"></i>
-                            <span>{{__('My Profile')}}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li>
-                        <livewire:Auth.logout />
-                    </li>
-                </ul><!-- End Profile Dropdown Items -->
-            </li><!-- End Profile Nav -->
         </ul>
     </nav><!-- End Icons Navigation -->
 </header>

@@ -1,7 +1,7 @@
 <div wire:ignore.self class="modal fade" id="openModalUpdate" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-xl ">
         <form wire:submit.prevent="updateUser">
-            <div class="modal-content">
+            <div class="modal-content card-body">
                 <div class="modal-header">
                     <h5 class="modal-title">{{__('Staff Update')}}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -47,12 +47,11 @@
                         <div class="row mb-2">
                             <div class="col">
                                 <label for="email" class="form-label">{{__('Your Email')}}<small class="text-danger">*</small></label>
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{__('Email')}}" wire:model="email">
+                                <input type="email" class="form-control input-custom @error('email') is-invalid @enderror" placeholder="{{__('Email')}}" wire:model="email">
                                 @error("email")
                                 <span class="invalid-feedback">{{ __($message) }}</span>
                                 @enderror
                             </div>
-
                             <div class="col">
                                 <label for="phone" class="form-label">{{__('Phone Number')}} <small class="text-danger">*</small> </label>
                                 <input type="text" class="form-control @error('phone') is-invalid @enderror" placeholder="{{__('Phone Number')}}" wire:model="phone">

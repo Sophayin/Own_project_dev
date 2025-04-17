@@ -1335,3 +1335,9 @@ h6 {
 .form-control {
   border: linear-gradient(40deg, #1d1101, #0f0f0f) !important;
 }
+.table-custom{
+    background: #000000 !important;
+}
+.logout:hover{
+  color: #ffa200;
+}

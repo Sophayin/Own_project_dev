@@ -6,10 +6,12 @@ use App\Livewire\Setting\SystemLog;
 use App\Models\Agency;
 use App\Models\City;
 use App\Models\Commune;
+use App\Models\DailyExpend;
 use App\Models\District;
 use App\Models\Product;
 use App\Models\Shop;
 use App\Models\Village;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\App;
@@ -24,36 +26,34 @@ class Dashboard extends Component
     public $villages = [];
     public $city_id, $district_id, $commune_id;
     public $start_date, $end_date;
+    public $last_month_start, $last_month_end;
 
-    public function render()
-    {
-        $user = auth()->user();
-        //--query only agencies that has children--
-        //if ($this->start_date && $this->end_date) {
-        //    $agencies = $agencies->whereBetween('updated_at', [$this->start_date . ' 00:00:00 ', $this->end_date . ' 23:59:59 ']);
-        //}
-        //if ($this->start_date && $this->end_date) {
-        //    $recruitAgencies = $recruitAgencies->whereBetween('updated_at', [$this->start_date . ' 00:00:00 ', $this->end_date . ' 23:59:59 ']);
-        //}
-        //if ($this->start_date && $this->end_date) {
-        //    $latestActions = $latestActions->whereBetween('created_at', [$this->start_date . ' 00:00:00 ', $this->end_date . ' 23:59:59 ']);
-        //}
-
-        //$this->cities = City::orderBy('name', 'asc')->orderBy('name', 'asc')->get();
-        //$this->districts = District::where('city_id', $this->city_id)->orderBy('name', 'asc')->get();
-        //$this->communes = Commune::where('district_id', $this->district_id)->orderBy('name', 'asc')->get();
-        //$this->villages = Village::where('commune_id', $this->commune_id)->orderBy('name', 'asc')->get();
-
-        return view(
-            'livewire.dashboard',
-            [
-                'user' => $user,
-            ]
-        )->title('Dashboard');
-    }
     public function mount()
     {
         $this->start_date = now()->startOfMonth()->toDateString();
-        $this->end_date = now()->endOfMonth()->toDateString();
+        $this->end_date = now()->toDateString();
+        $this->last_month_start = Carbon::now()->subMonth()->startOfMonth()->toDateString();
+        $this->last_month_end = Carbon::now()->subMonth()->endOfMonth()->toDateString();
+    }
+
+    public function render()
+    {
+        $current_expend = DailyExpend::query();
+        if ($this->start_date && $this->end_date) {
+            $current_expend = $current_expend->whereBetween('created_at', [$this->start_date . ' 00:00:00 ', $this->end_date . ' 23:59:59 ']);
+        }
+        $current_expend = $current_expend->orderBy('created_at', 'DESC')->get();
+        $last_month_expend = DailyExpend::query();
+        if ($this->last_month_start && $this->last_month_end) {
+            $last_month_expend = $last_month_expend->whereBetween('created_at', [$this->last_month_start . ' 00:00:00 ', $this->last_month_end . ' 23:59:59 ']);
+        }
+        $last_month_expend = $last_month_expend->orderBy('created_at', 'DESC')->get();
+        return view(
+            'livewire.dashboard',
+            [
+                'current_expend' => $current_expend,
+                'last_month_expend' => $last_month_expend,
+            ]
+        )->title('Dashboard');
     }
 }
