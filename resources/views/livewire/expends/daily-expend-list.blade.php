@@ -33,7 +33,15 @@
                 </div>
                 <?php
                 $total_current_expense = 0;
+                $total_other_expense = 0;
                 ?>
+                @foreach ($other_expense as $o_expense )
+                <?php
+                $total_event = $o_expense->event_expense;
+                $total_taxi_fee = $o_expense->taxi_fee;
+                $total_other_expense += $o_expense->accessary_price + $o_expense->cloth_price + ($total_event + $total_taxi_fee / 4000);
+                ?>
+                @endforeach
                 @foreach($daily_expends as $daily)
                 <?php
                 $dollar_cash = $daily->coffee_price + $daily->gasoline_price + $daily->party_expend;
@@ -46,7 +54,6 @@
                         <div class="p-2">
                             <div class="col-lg-12 col-sm-6">
                                 <h6>
-
                                     @if($total_current_expense> $amount)
                                     {{__('Over Expect')}}
                                     @else
@@ -56,9 +63,9 @@
                                 <h4 class="text-center">
                                     $
                                     @if($total_current_expense> $amount)
-                                    - {{number_format(abs($total_current_expense - $amount),2)}}
+                                    - {{number_format(abs($total_current_expense + $total_other_expense - $amount),2)}}
                                     @else
-                                    {{number_format(abs($total_current_expense - $amount),2)}}
+                                    {{number_format(abs($total_current_expense + $total_other_expense - $amount),2)}}
                                     @endif
                                 </h4>
                             </div>
@@ -71,6 +78,16 @@
                             <div class="col-lg-12 col-sm-6">
                                 <h6>{{__('Current Expense')}}</h6>
                                 <h4 class="text-center text-danger">$ {{($total_current_expense)}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <div class="card-body">
+                        <div class="p-2">
+                            <div class="col-lg-12 col-sm-6">
+                                <h6>{{__('Other Expense')}}</h6>
+                                <h4 class="text-center text-danger">$ {{( $total_other_expense)}}</h4>
                             </div>
                         </div>
                     </div>

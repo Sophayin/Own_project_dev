@@ -67,8 +67,8 @@
                                     <div class="col-lg-5 p-2" style="margin-top: -17px;">
                                         <h6>Item Cost</h6>
                                         <h6 class="mt-3"> <strong>៛ {{$expend->cloth_price}} </strong></h6>
-                                        <h6 class="mt-3"> <strong>៛ {{$expend->accessary_price}} </strong></h6>
-                                        <h6 class="mt-4"> <strong>៛ {{$expend->event_expense}} </strong></h6>
+                                        <h6 class="mt-4"> <strong>$ {{$expend->accessary_price}} </strong></h6>
+                                        <h6 class="mt-3"> <strong>៛ {{$expend->event_expense}} </strong></h6>
                                         <h6 class="mt-3"> <strong>៛ {{$expend->taxi_fee}} </strong></h6>
                                     </div>
                                     <div class="col-lg-12">

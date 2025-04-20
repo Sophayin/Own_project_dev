@@ -3,6 +3,7 @@
 namespace App\Livewire\Expends;
 
 use App\Models\DailyExpend;
+use App\Models\OtherExpense;
 use App\Models\TargetExpense;
 use Carbon\Carbon;
 use Livewire\Component;
@@ -32,11 +33,17 @@ class DailyExpendList extends Component
     {
         $this->action = $this->action;
         $daily_expends = DailyExpend::query();
+        $other_expense = OtherExpense::query();
         if ($this->start_date && $this->end_date) {
             $daily_expends = $daily_expends->whereBetween('created_at', [$this->start_date . ' 00:00:00 ', $this->end_date . ' 23:59:59 ']);
         }
+        if ($this->start_date && $this->end_date) {
+            $other_expense = $other_expense->whereBetween('created_at', [$this->start_date . ' 00:00:00 ', $this->end_date . ' 23:59:59 ']);
+        }
         $daily_expends = $daily_expends->orderBy('created_at', 'DESC')->get();
-        return view('livewire.expends.daily-expend-list', ['daily_expends' => $daily_expends]);
+        $other_expense = $other_expense->orderBy('created_at', 'DESC')->get();
+
+        return view('livewire.expends.daily-expend-list', ['daily_expends' => $daily_expends, 'other_expense' => $other_expense]);
     }
 
     public function btn_add_application()

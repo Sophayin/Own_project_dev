@@ -9,7 +9,7 @@ class UpdateOtherExpense extends Component
 {
     public $start_date, $end_date, $expend_date, $other_expend_date;
     public $other_expend_id;
-    public $cloth, $cloth_price, $accessary, $accessary_price, $event, $event_expend, $taxi, $taxi_fee, $remark;
+    public $cloth, $cloth_price, $accessary, $accessary_price, $event, $event_expense, $taxi, $taxi_fee, $remark;
     protected $listeners = ['edit_other_expend'];
 
     public function render()
@@ -30,7 +30,7 @@ class UpdateOtherExpense extends Component
         $this->accessary = $other_expend->accessary;
         $this->accessary_price = $other_expend->accessary_price;
         $this->event = $other_expend->event;
-        $this->event_expend = $other_expend->event_expend;
+        $this->event_expense = $other_expend->event_expend;
         $this->taxi = $other_expend->taxi;
         $this->taxi_fee = $other_expend->taxi_fee;
         $this->remark = $other_expend->remark;
