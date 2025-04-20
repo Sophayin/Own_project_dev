@@ -13,7 +13,7 @@
                             <div class="col-lg-4 col-md-6 col-sm-6 mt-2">
                                 <label class="form-label text fw-semibold">{{__('Expend Date')}}</label>
                                 <div class="input-group">
-                                    <input type="date" class="form-control custom-input" wire:model="expend_date"
+                                    <input type="date" class="form-control custom-input" wire:model.live="expend_date"
                                         placeholder="" />
                                 </div>
                             </div>

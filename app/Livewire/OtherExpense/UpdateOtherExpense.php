@@ -44,7 +44,7 @@ class UpdateOtherExpense extends Component
         $other_expend->accessary = $this->accessary;
         $other_expend->accessary_price = $this->accessary_price;
         $other_expend->event = $this->event;
-        $other_expend->event_expend = $this->event_expend;
+        $other_expend->event_expense = $this->event_expense;
         $other_expend->taxi = $this->taxi;
         $other_expend->taxi_fee = $this->taxi_fee;
         $other_expend->remark = $this->remark;
@@ -54,5 +54,6 @@ class UpdateOtherExpense extends Component
             'type' => 'success',
             'message' => __("Other expend was successfully updated")
         ]);
+        $this->dispatch('modal.closeModalUpdate');
     }
 }

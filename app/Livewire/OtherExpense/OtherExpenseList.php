@@ -18,10 +18,17 @@ class OtherExpenseList extends Component
     public $remark;
     public $expend_date;
     public $other_expends = [];
+    public $expand_date, $start_date, $end_date;
 
+    public function mount()
+    {
+        $this->expend_date = date('Y-m-d');
+        $this->start_date = now()->startOfMonth()->toDateString();
+        $this->end_date = now()->endOfMonth()->toDateString();
+    }
     public function render()
     {
-        $this->other_expends = OtherExpense::all();
+        $this->other_expends = OtherExpense::orderBy('created_at', 'DESC')->get();
         return view('livewire.other-expense.other-expense-list');
     }
     public function btn_add_application()
@@ -46,6 +53,7 @@ class OtherExpenseList extends Component
             'type' => 'success',
             'message' => __("Expend was successfully submitted")
         ]);
+        $this->dispatch('modal.closeModal');
     }
 
     public $expend_id;

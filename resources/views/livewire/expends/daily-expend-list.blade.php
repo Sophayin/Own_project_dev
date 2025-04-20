@@ -1,17 +1,15 @@
 <div>
     <section class="section">
-        <div class="card-body d-flex mb-3 justify-content-between">
-            <div class="mt-3 d-flex">
-                <!-- Date -->
-                <div class="col-lg-12 d-flex">
-                    <div class="input-group w-50 p-2">
-                        <input type="date" class="input-sm form-control custom-input datepicker"
-                            wire:model.live="start_date" />
-                    </div>
-                    <div class="input-group w-50 p-2">
-                        <input type="date" class="input-sm form-control custom-input datepicker"
-                            wire:model.live="end_date" />
-                    </div>
+        <div class="card-body col-12 d-flex mb-3 justify-content-between">
+            <!-- Date -->
+            <div class="col-lg-6 d-flex mt-3">
+                <div class="input-group w-50 p-2">
+                    <input type="date" class="input-sm form-control custom-input datepicker"
+                        wire:model.live="start_date" />
+                </div>
+                <div class="input-group w-50 p-2">
+                    <input type="date" class="input-sm form-control custom-input datepicker"
+                        wire:model.live="end_date" />
                 </div>
             </div>
             <div class="d-flex justify-content-end">
@@ -99,7 +97,7 @@
                     $riel_cash = $daily->breakfast + $daily->lunch + $daily->dinner;
                     $total_current_expense = ($riel_cash / 4000) + $dollar_cash;
                     ?>
-                    <div class="col-lg-3 mb-4">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                         <div class="card-body mb-4">
                             <div class="border-0 shadow-sm">
                                 <div class="d-flex mb-3 justify-content-between">
@@ -117,8 +115,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row d-flex p-1">
-                                    <div class="col-lg-7 p-2" style="margin-top: -20px;">
+                                <div class="row">
+                                    <div class="col-7 p-2" style="margin-top: -20px;">
                                         <h6 class="p-1"><i class="bi bi-cart-plus p-2"></i> Items</h6>
                                         <h6 class="p-1"> <i class="bi bi-brightness-alt-high-fill p-2"></i> Breakfast
                                         </h6>
@@ -129,7 +127,7 @@
                                         <h6 class="p-1"> <i class="bi bi-emoji-sunglasses p-2"></i> Party</h6>
                                         <h6 class="p-1"> <i class="bi bi-fuel-pump-diesel p-2"></i> Gasoline</h6>
                                     </div>
-                                    <div class="col-lg-5 p-2" style="margin-top: -17px;">
+                                    <div class="col-5  p-2" style="margin-top: -17px;">
                                         <h6>Item Cost</h6>
                                         <h6 class="mt-3"> <strong>៛ {{number_format($daily->breakfast,2)}}</strong></h6>
                                         <h6 class="mt-3"> <strong>៛ {{number_format($daily->lunch,2)}}</strong></h6>
@@ -140,17 +138,17 @@
                                         <h6 class="mt-3"> <strong>$ {{number_format($daily->gasoline_price,2)}}</strong>
                                         </h6>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <h6 class="p-1"><i class="bi bi-brush p-2"></i> Remark
-                                            <p class="p-3">
-                                                @if($daily->remark)
-                                                {{$daily->remark}}
-                                                @else
-                                                -
-                                                @endif
-                                            </p>
-                                        </h6>
-                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6 class="p-1"><i class="bi bi-brush p-2"></i> Remark
+                                        <p class="p-3">
+                                            @if($daily->remark)
+                                            {{$daily->remark}}
+                                            @else
+                                            -
+                                            @endif
+                                        </p>
+                                    </h6>
                                 </div>
                                 <hr style="margin-top: -20px;">
                                 <div class="row d-flex">

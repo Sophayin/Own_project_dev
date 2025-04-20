@@ -17,6 +17,7 @@ use App\Livewire\Expends\DailyExpend;
 use App\Livewire\Expends\DailyExpendList;
 use App\Livewire\HRM\HRMList;
 use App\Livewire\HRM\PayrollPreview;
+use App\Livewire\Incomes\IncomeList;
 use App\Livewire\Notification;
 use App\Livewire\Other\Product\CreateProduct;
 use App\Livewire\Other\Product\ProductList;
@@ -72,6 +73,7 @@ Route::middleware('auth', 'route_permission')->group(function () {
   Route::GET('/daily-expense', DailyExpendList::class)->name('target-expense');
   Route::GET('/other-expense', OtherExpenseList::class)->name('other-expense');
   Route::GET('/target-expense', TargetExpenseList::class)->name('target-expense');
+  Route::GET('/monthly-income', IncomeList::class)->name('monthly-income');
 
   Route::GET('/report/{slug}', ManageReport::class)->name('report');
   Route::GET('/report/daily_expense-report', DailyExpenseReport::class)->name('daily-expense-report');

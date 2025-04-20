@@ -1,6 +1,6 @@
 <div wire:ignore.self class="modal fade" id="openModalUpdate">
     <div class="modal-dialog modal-lg">
-        <form action="" wire:submit.prevent="edit">
+        <form action="" wire:submit.prevent="update_other_expend">
             <div class="modal-content card-body">
                 <div class="modal-header">
                     <h5 class="form-label text fw-semibold">{{__('Update Daily Expense')}} {{$other_expend_id}}</h5>

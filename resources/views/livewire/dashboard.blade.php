@@ -26,8 +26,8 @@
                         <h2 class="text-default">${{$total_current_expense}}</h2>
                     </div>
                     <div class="d-inline-block p-2">
-                        <h6 class="">Amount expend of this week</h6>
-                        <small>Expend on this month higher than last week</small>
+                        <h6 class="">Amount expend of current expend</h6>
+                        <small class="text-default">Expend on this month higher than last week</small>
                     </div>
                 </div>
             </div>
@@ -41,8 +41,8 @@
                         <h2 class="text-default">$ {{$total_party_expense}}</h2>
                     </div>
                     <div class="d-inline-block p-2">
-                        <h6 class="">Amount expend of this week</h6>
-                        <small>Expend on this month higher than last week</small>
+                        <h6 class="">Amount expend of current month party</h6>
+                        <small class="text-default">Expend on this month higher than last week</small>
                     </div>
                 </div>
             </div>
@@ -66,8 +66,8 @@
                         <h2 class="text-default">$ {{$total_last_month_expense}}</h2>
                     </div>
                     <div class="d-inline-block p-2">
-                        <h6 class="">Amount expend of this week</h6>
-                        <small>Expend on this month higher than last week</small>
+                        <h6 class="">Amount expend of last month expend</h6>
+                        <small class="text-default">Expend on this month higher than last week</small>
                     </div>
                 </div>
             </div>
