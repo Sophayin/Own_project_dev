@@ -34,7 +34,7 @@ class IncomeList extends Component
             $monthly_incomes = $monthly_incomes->whereBetween('created_at', [$this->start_date . ' 00:00:00', $this->end_date . ' 23:59:59']);
         }
         $monthly_incomes = $monthly_incomes->orderBy('created_at', 'DESC')->get();
-        return view('livewire.incomes.income-list', ['monthly_incomes' => $monthly_incomes]);
+        return view('livewire.incomes.income-list', ['monthly_incomes' => $monthly_incomes])->title('Income');
     }
     public function set_expend()
     {

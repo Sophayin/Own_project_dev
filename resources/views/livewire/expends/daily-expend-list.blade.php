@@ -60,7 +60,7 @@
                                     {{__('Remain Balance')}}
                                     @endif
                                 </h6>
-                                <h4 class="text-center">
+                                <h4 class="text-center text-success">
                                     $
                                     @if($total_current_expense> $amount)
                                     - {{number_format(abs($total_current_expense + $total_other_expense - $amount),2)}}

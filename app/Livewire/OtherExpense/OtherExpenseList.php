@@ -29,7 +29,7 @@ class OtherExpenseList extends Component
     public function render()
     {
         $this->other_expends = OtherExpense::orderBy('created_at', 'DESC')->get();
-        return view('livewire.other-expense.other-expense-list');
+        return view('livewire.other-expense.other-expense-list')->title('Other Expense');
     }
     public function btn_add_application()
     {

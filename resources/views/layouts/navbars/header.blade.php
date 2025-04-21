@@ -14,7 +14,8 @@ $department = Department::where('slug', '/' . Request::segment(1))->first();
 <header id="header" class="header fixed-top d-flex align-items-center p-2" style="padding: 10px !important;">
     <div class="d-flex align-items-center justify-content-between text">
         <a href="" class="logo d-flex align-items-center">
-            <img src="{{asset('assets/auth/image.png')}}" alt="Super Admin">
+            <!-- <img src="{{asset('assets/auth/image.png')}}" alt="Super Admin"> -->
+            <h5 class="text-default">Expense System</h5>
         </a>
         <i class="bi bi-list toggle-sidebar-btn d-none"></i>
     </div>

@@ -15,7 +15,7 @@ class TargetExpenseList extends Component
     public function render()
     {
         $this->monthly_targets = TargetExpense::orderBy('month', 'asc')->get();
-        return view('livewire.target-expense.target-expense-list', ['$monthly_targets' => $this->monthly_targets]);
+        return view('livewire.target-expense.target-expense-list', ['$monthly_targets' => $this->monthly_targets])->title('Target Expense');
     }
     public function set_expend()
     {

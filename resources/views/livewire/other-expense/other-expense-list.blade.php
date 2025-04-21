@@ -35,7 +35,9 @@
                     ?>
                     @foreach ($other_expends as $expend)
                     <?php
-                    $total_expend = $expend->cloth_price + $expend->accessary_price + $expend->event_expense + $expend->taxi_fee;
+                    $clothes = $expend->cloth_price;
+                    $accessary = $expend->accessary_price;
+                    $total_expend = $clothes * 4000 + $accessary * 4000 + $expend->event_expense + $expend->taxi_fee;
                     ?>
                     <div class="col-lg-3 mb-4">
                         <div class="card-body mb-4">
@@ -89,7 +91,7 @@
                                         <h6 class="p-1">Tatal expense:</h6>
                                     </div>
                                     <div class="col-lg-5 p-2" style="margin-top: -17px;">
-                                        <h6> <strong class="text-default">៛ {{$total_expend}}</strong></h6>
+                                        <h6> <strong class="text-default">៛ {{number_format($total_expend),2}}</strong></h6>
                                     </div>
                                 </div>
                             </div>

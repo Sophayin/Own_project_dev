@@ -43,7 +43,7 @@ class DailyExpendList extends Component
         $daily_expends = $daily_expends->orderBy('created_at', 'DESC')->get();
         $other_expense = $other_expense->orderBy('created_at', 'DESC')->get();
 
-        return view('livewire.expends.daily-expend-list', ['daily_expends' => $daily_expends, 'other_expense' => $other_expense]);
+        return view('livewire.expends.daily-expend-list', ['daily_expends' => $daily_expends, 'other_expense' => $other_expense])->title('Daily Expense');
     }
 
     public function btn_add_application()

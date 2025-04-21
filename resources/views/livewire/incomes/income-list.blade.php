@@ -38,7 +38,6 @@
             $total_income_amount += $income->amount;
             $total_sent_wife += $income->sent_wife;
             $total_get_from_wife += $income->get_from_wife;
-
             ?>
             @endforeach
             <div class="row d-flex">
@@ -59,7 +58,7 @@
                             <h4 class="text">Total Sent Wife</h4>
                         </div>
                         <div class="d-flex justify-content-between p-2">
-                            <h2 class="text-default p-2">${{$total_sent_wife}}.00 </h2>
+                            <h2 class="text-default p-2">${{$total_sent_wife }}.00 </h2>
                         </div>
                     </div>
                 </div>
@@ -69,7 +68,7 @@
                             <h4 class="text">Total Get From Wife</h4>
                         </div>
                         <div class="d-flex justify-content-between p-2">
-                            <h2 class="text-default p-2">${{$total_get_from_wife}}.00 </h2>
+                            <h2 class="text-default p-2">${{$total_get_from_wife}}.00 / <small>${{number_format($total_income_amount - $total_sent_wife),2}}</small> </h2>
                         </div>
                     </div>
                 </div>
