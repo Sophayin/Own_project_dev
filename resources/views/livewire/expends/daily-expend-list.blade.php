@@ -27,13 +27,11 @@
         </div>
         <div class="card">
             <div class="d-flex mb-3">
-                <div class="me-auto p-2">
-                    <div class="d-flex p-2">
-                    </div>
-                </div>
                 <?php
                 $total_current_expense = 0;
                 $total_other_expense = 0;
+                $total_coffee_expense = 0;
+                $total_party_expense = 0;
                 ?>
                 @foreach ($other_expense as $o_expense )
                 <?php
@@ -47,8 +45,50 @@
                 $dollar_cash = $daily->coffee_price + $daily->gasoline_price + $daily->party_expend;
                 $riel_cash = $daily->breakfast + $daily->lunch + $daily->dinner;
                 $total_current_expense += ($riel_cash / 4000) + $dollar_cash;
+                $total_coffee_expense += $daily->coffee_price;
+                $total_party_expense += $daily->party_expend;
                 ?>
                 @endforeach
+                <div class="me-auto p-2">
+                    <div class="d-flex p-2">
+                        <div class="p-2">
+                            <div class="card-body">
+                                <div class="p-2">
+                                    <div class="col-lg-12 col-sm-6">
+                                        <h6>
+                                            Party Expense
+                                        </h6>
+                                        <h4 class="text-center text-danger">
+                                            {{$total_party_expense}}
+                                        </h4>
+                                        <?php
+                                        $percentage = ($total_party_expense / $total_current_expense) * 100;
+                                        ?>
+                                        <small> {{round($percentage,2)}} % / {{$total_current_expense}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="card-body">
+                                <div class="p-2">
+                                    <div class="col-lg-12 col-sm-6">
+                                        <h6>
+                                            Coffee Expense
+                                        </h6>
+                                        <h4 class="text-center text-light">
+                                            {{ $total_coffee_expense}}
+                                        </h4>
+                                        <?php
+                                        $percentage = ($total_coffee_expense / $total_current_expense) * 100;
+                                        ?>
+                                        <small> {{round($percentage,2)}} % / {{$total_current_expense}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="p-2">
                     <div class="card-body">
                         <div class="p-2">
@@ -68,6 +108,11 @@
                                     {{number_format(abs($total_current_expense + $total_other_expense - $amount),2)}}
                                     @endif
                                 </h4>
+                                <?php
+                                $remain_amount = $total_current_expense + $total_other_expense - $amount;
+                                $percentage = abs($remain_amount / $amount * 100);
+                                ?>
+                                <small class="text-center"> {{round($percentage,2)}} % / {{$amount}}</small>
                             </div>
                         </div>
                     </div>
@@ -78,6 +123,10 @@
                             <div class="col-lg-12 col-sm-6">
                                 <h6>{{__('Current Expense')}}</h6>
                                 <h4 class="text-center text-danger">$ {{($total_current_expense)}}</h4>
+                                <?php
+                                $percentage = abs($total_current_expense / $amount * 100);
+                                ?>
+                                <small class="text-center"> {{round($percentage,2)}} % / {{$amount}}</small>
                             </div>
                         </div>
                     </div>
@@ -88,6 +137,10 @@
                             <div class="col-lg-12 col-sm-6">
                                 <h6>{{__('Other Expense')}}</h6>
                                 <h4 class="text-center text-danger">$ {{( $total_other_expense)}}</h4>
+                                <?php
+                                $percentage = abs($total_other_expense / $amount * 100);
+                                ?>
+                                <small class="text-center"> {{round($percentage,2)}} % / {{$amount}}</small>
                             </div>
                         </div>
                     </div>
@@ -98,6 +151,10 @@
                             <div class="col-lg-12 col-sm-6">
                                 <h6>{{__('Target Expense')}}</h6>
                                 <h4 class="text-center text-default">${{$amount ?? 0}}.00</h4>
+                                <?php
+                                $percentage = abs($amount / 100 * 100);
+                                ?>
+                                <small class="text-center"> {{round($percentage,2)}} % / {{$amount}}</small>
                             </div>
                         </div>
                     </div>
