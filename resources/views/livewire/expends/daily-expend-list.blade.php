@@ -208,7 +208,8 @@
                                         <h6 class="mt-4"> <strong>៛ {{number_format($daily->dinner,2)}}</strong></h6>
                                         <h6 class="mt-3"> <strong>$ {{number_format($daily->coffee_price,2)}}</strong>
                                         </h6>
-                                        <h6 class="mt-3"> <strong>$ {{number_format($daily->party_expend,2)}}</strong></h6>
+                                        <h6 class="mt-3"> <strong>$ {{number_format($daily->party_expend,2)}}</strong>
+                                        </h6>
                                         <h6 class="mt-3"> <strong>$ {{number_format($daily->gasoline_price,2)}}</strong>
                                         </h6>
                                     </div>
@@ -230,7 +231,8 @@
                                         <h6 class="p-1">Tatal expense:</h6>
                                     </div>
                                     <div class="col-lg-5 p-2" style="margin-top: -17px;">
-                                        <h6 class="button_save p-2 text-center"> <strong class="text-light p-3">$ {{ $total_current_expense}}.00</strong></h6>
+                                        <h6 class="text-center"> <strong class="text-default">$
+                                                {{ $total_current_expense}}.00</strong></h6>
                                     </div>
                                 </div>
                             </div>
