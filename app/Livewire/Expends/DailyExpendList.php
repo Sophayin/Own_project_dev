@@ -26,7 +26,7 @@ class DailyExpendList extends Component
     public $start_date;
     public $end_date;
     public $city_id;
-    protected $listeners = ['refresh_application' => 'render'];
+    protected $listeners = ['refresh_application' => 'render', 'refresh_application' => 'mount'];
     protected $queryString = ['action', 'application_id'];
     public $target_expend = [];
     public function render()
@@ -90,6 +90,7 @@ class DailyExpendList extends Component
         $this->resetExcept('expend_date');
         $this->dispatch('modal.closeModal');
         $this->dispatch('refresh_application');
+        $this->updatedStartDate();
     }
 
     public $expend_id;

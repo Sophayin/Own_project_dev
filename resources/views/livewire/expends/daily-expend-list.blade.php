@@ -26,11 +26,9 @@
             </div>
         </div>
         <div class="card">
-            <div class="d-flex mb-3">
+            <div class="d-flex">
                 <?php
-                $total_current_expense = 0;
                 $total_other_expense = 0;
-                $total_coffee_expense = 0;
                 $total_party_expense = 0;
                 ?>
                 @foreach ($other_expense as $o_expense )
@@ -40,6 +38,12 @@
                 $total_other_expense += $o_expense->accessary_price + $o_expense->cloth_price + ($total_event + $total_taxi_fee / 4000);
                 ?>
                 @endforeach
+                <?php
+                $total_current_expense = 0;
+                $total_coffee_expense = 0;
+                $total_meal_expense = 0;
+
+                ?>
                 @foreach($daily_expends as $daily)
                 <?php
                 $dollar_cash = $daily->coffee_price + $daily->gasoline_price + $daily->party_expend;
@@ -47,6 +51,7 @@
                 $total_current_expense += ($riel_cash / 4000) + $dollar_cash;
                 $total_coffee_expense += $daily->coffee_price;
                 $total_party_expense += $daily->party_expend;
+                $total_meal_expense += ($daily->breakfast + $daily->lunch + $daily->dinner) / 4000;
                 ?>
                 @endforeach
                 <div class="me-auto p-2">
@@ -87,9 +92,27 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="p-2">
+                            <div class="card-body">
+                                <div class="p-2">
+                                    <div class="col-lg-12 col-sm-6">
+                                        <h6>
+                                            Meal Expense
+                                        </h6>
+                                        <h4 class="text-center text-light">
+                                            {{ $total_meal_expense}}
+                                        </h4>
+                                        <?php
+                                        $percentage = ($total_meal_expense / $total_current_expense) * 100;
+                                        ?>
+                                        <small> {{round($percentage,2)}} % / {{$total_current_expense}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="p-2">
+                <div class="p-2 mt-3">
                     <div class="card-body">
                         <div class="p-2">
                             <div class="col-lg-12 col-sm-6">
@@ -102,10 +125,10 @@
                                 </h6>
                                 <h4 class="text-center text-success">
                                     $
-                                    @if($total_current_expense> $amount)
-                                    - {{number_format(abs($total_current_expense + $total_other_expense - $amount),2)}}
+                                    @if(!empty($total_current_expense > $amount))
+                                    - {{number_format(abs($total_current_expense + $total_other_expense - $amount), 2)}}
                                     @else
-                                    {{number_format(abs($total_current_expense + $total_other_expense - $amount),2)}}
+                                    {{number_format(abs($total_current_expense + $total_other_expense - $amount), 2)}}
                                     @endif
                                 </h4>
                                 <?php
@@ -117,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-2">
+                <div class="p-2 mt-3">
                     <div class="card-body">
                         <div class="p-2">
                             <div class="col-lg-12 col-sm-6">
@@ -131,7 +154,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-2">
+                <div class="p-2 mt-3">
                     <div class="card-body">
                         <div class="p-2">
                             <div class="col-lg-12 col-sm-6">
@@ -145,14 +168,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-2">
+                <div class="p-2 mt-3">
                     <div class="card-body">
                         <div class="p-2">
                             <div class="col-lg-12 col-sm-6">
                                 <h6>{{__('Target Expense')}}</h6>
                                 <h4 class="text-center text-default">${{$amount ?? 0}}.00</h4>
                                 <?php
-                                $percentage = abs($amount / 100 * 100);
+                                $percentage = abs($amount / $amount * 100);
                                 ?>
                                 <small class="text-center"> {{round($percentage,2)}} % / {{$amount}}</small>
                             </div>
@@ -164,12 +187,14 @@
                 <div class="row d-flex p-2">
                     <?php
                     $total_current_expense = 0;
+                    $coffee = 0;
                     ?>
                     @foreach($daily_expends as $daily)
                     <?php
                     $dollar_cash = $daily->coffee_price + $daily->gasoline_price + $daily->party_expend;
                     $riel_cash = $daily->breakfast + $daily->lunch + $daily->dinner;
                     $total_current_expense = ($riel_cash / 4000) + $dollar_cash;
+
                     ?>
                     <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                         <div class="card-body mb-4">
