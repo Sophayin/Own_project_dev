@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class IncomeList extends Component
 {
-    public $month, $amount, $source, $sent_wife;
+    public $month, $amount, $source, $sent_wife, $get_from_wife;
     public $remark = "Expense your income wisely";
     public $getting_date, $start_date, $end_date;
     protected $listeners = ['refresh' => 'render'];
@@ -47,6 +47,7 @@ class IncomeList extends Component
         $income->source = $this->source;
         $income->amount = $this->amount;
         $income->sent_wife = $this->sent_wife;
+        $income->get_from_wife = $this->get_from_wife;
         $income->remark = $this->remark;
         $income->month = $this->month;
         $income->created_at = $this->getting_date . ' ' . date("h:i:s");
