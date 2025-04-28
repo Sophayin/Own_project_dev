@@ -64,7 +64,7 @@
                                             Party Expense
                                         </h6>
                                         <h4 class="text-center text-danger">
-                                            {{$total_party_expense}}
+                                            $ {{$total_party_expense}}
                                         </h4>
                                         <?php
                                         $percentage = ($total_party_expense / $total_current_expense) * 100;
@@ -82,7 +82,7 @@
                                             Coffee Expense
                                         </h6>
                                         <h4 class="text-center text-light">
-                                            {{ $total_coffee_expense}}
+                                            $ {{ $total_coffee_expense}}
                                         </h4>
                                         <?php
                                         $percentage = ($total_coffee_expense / $total_current_expense) * 100;
@@ -100,7 +100,7 @@
                                             Meal Expense
                                         </h6>
                                         <h4 class="text-center text-light">
-                                            {{ $total_meal_expense}}
+                                            $ {{ $total_meal_expense}}
                                         </h4>
                                         <?php
                                         $percentage = ($total_meal_expense / $total_current_expense) * 100;
@@ -233,7 +233,12 @@
                                         <h6 class="mt-4"> <strong>៛ {{number_format($daily->dinner,2)}}</strong></h6>
                                         <h6 class="mt-3"> <strong>$ {{number_format($daily->coffee_price,2)}}</strong>
                                         </h6>
-                                        <h6 class="mt-3"> <strong>$ {{number_format($daily->party_expend,2)}}</strong>
+                                        <h6 class="mt-3">
+                                            @if($daily->party_expend > 0)
+                                            <strong class="text-primary">$ {{number_format($daily->party_expend,2)}}</strong>
+                                            @else
+                                            <strong>$ {{number_format($daily->party_expend,2)}}</strong>
+                                            @endif
                                         </h6>
                                         <h6 class="mt-3"> <strong>$ {{number_format($daily->gasoline_price,2)}}</strong>
                                         </h6>
