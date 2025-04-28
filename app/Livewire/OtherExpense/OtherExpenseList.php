@@ -17,7 +17,7 @@ class OtherExpenseList extends Component
     public $taxi_fee;
     public $remark;
     public $expend_date;
-    public $other_expends = [];
+    // public $other_expends = [];
     public $expand_date, $start_date, $end_date;
 
     public function mount()
@@ -28,8 +28,12 @@ class OtherExpenseList extends Component
     }
     public function render()
     {
-        $this->other_expends = OtherExpense::orderBy('created_at', 'DESC')->get();
-        return view('livewire.other-expense.other-expense-list')->title('Other Expense');
+        $other_expends = OtherExpense::query();
+        if ($this->start_date && $this->end_date) {
+            $other_expends = $other_expends->whereBetween('created_at', [$this->start_date . ' 00:00:00', $this->end_date . ' 23:59:59']);
+        }
+        $other_expends = $other_expends->orderBy('created_at', 'DESC')->get();
+        return view('livewire.other-expense.other-expense-list', ['other_expends' => $other_expends])->title('Other Expense');
     }
     public function btn_add_application()
     {

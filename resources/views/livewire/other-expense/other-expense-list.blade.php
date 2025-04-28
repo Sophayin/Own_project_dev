@@ -91,7 +91,8 @@
                                         <h6 class="p-1">Tatal expense:</h6>
                                     </div>
                                     <div class="col-lg-5 p-2" style="margin-top: -17px;">
-                                        <h6> <strong class="text-default">៛ {{number_format($total_expend),2}}</strong></h6>
+                                        <h6> <strong class="text-default">៛ {{number_format($total_expend),2}}</strong>
+                                        </h6>
                                     </div>
                                 </div>
                             </div>
