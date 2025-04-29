@@ -23,7 +23,17 @@
                         $total_party_expense += $expend->party_expend;
                         ?>
                         @endforeach
-                        <h2 class="text-default">${{$total_current_expense}}</h2>
+                        <?php
+                        $total_other_expense = 0;
+                        ?>
+                        @foreach ($other_expend as $o_expense )
+                        <?php
+                        $total_event = $o_expense->event_expense;
+                        $total_taxi_fee = $o_expense->taxi_fee;
+                        $total_other_expense += $o_expense->accessary_price + $o_expense->cloth_price + ($total_event + $total_taxi_fee / 4000);
+                        ?>
+                        @endforeach
+                        <h2 class="text-default">${{$total_current_expense + $total_other_expense}}</h2>
                     </div>
                     <div class="d-inline-block p-2">
                         <h6 class="">Amount expend of current expend</h6>
