@@ -1,7 +1,7 @@
 <div>
     <section class="section">
-        <div class="d-flex mb-3 justify-content-between">
-            <div class="p-2 d-flex">
+        <div class="card-body d-flex mb-3 justify-content-between">
+            <div class="p-2 d-flex mt-3">
                 <!-- Date -->
                 <div class="col-lg-12 d-flex">
                     <div class="input-group w-50 p-2">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-end">
+            <div class="d-flex justify-content-end p-2 mt-3">
                 <div class="p-2">
                     <div class="col-lg-12 col-sm-6">
                         <a wire:click="btn_add_application">
