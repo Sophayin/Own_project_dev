@@ -27,6 +27,9 @@
     <link href="{{asset('assets/lib/css/bootstrap-datepicker.standalone.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/lib/css/bootstrap-datepicker.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/lib/css/bootstrap-datepicker3.min.css')}}" rel="stylesheet" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     @livewireStyles
 
 </head>

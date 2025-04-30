@@ -117,25 +117,25 @@
                         <div class="p-2">
                             <div class="col-lg-12 col-sm-6">
                                 <h6>
-                                    @if($total_current_expense> $amount)
+                                    @if($total_current_expense + $total_other_expense > $amount)
                                     {{__('Over Expect')}}
                                     @else
                                     {{__('Remain Balance')}}
                                     @endif
                                 </h6>
                                 <h4 class="text-center text-success">
-                                    $
-                                    @if(!empty($total_current_expense > $amount))
-                                    - {{number_format(abs($total_current_expense + $total_other_expense - $amount), 2)}}
-                                    @else
-                                    {{number_format(abs($total_current_expense + $total_other_expense - $amount), 2)}}
-                                    @endif
-                                </h4>
-                                <?php
-                                $remain_amount = $total_current_expense + $total_other_expense - $amount;
-                                $percentage = abs($remain_amount / $amount * 100);
-                                ?>
-                                <small class="text-center"> {{round($percentage,2)}} % / {{$amount}}</small>
+                                    <?php $total_exp = $total_current_expense + $total_other_expense - $amount ?>
+                                    @if($total_current_expense + $total_other_expense < $amount)
+                                        ${{abs($total_current_expense + $total_other_expense - $amount)}}
+                                        @else
+                                        ${{$total_exp + $amount}}
+                                        @endif
+                                        </h4>
+                                        <?php
+                                        $remain_amount = $total_current_expense + $total_other_expense - $amount;
+                                        $percentage = abs($remain_amount / $amount * 100);
+                                        ?>
+                                        <small class="text-center"> {{round($percentage,2)}} % / {{$amount}}</small>
                             </div>
                         </div>
                     </div>
