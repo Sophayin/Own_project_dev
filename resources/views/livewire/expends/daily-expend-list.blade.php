@@ -64,12 +64,18 @@
                                             Party Expense
                                         </h6>
                                         <h4 class="text-center text-danger">
+                                            @if($total_party_expense !=0)
                                             $ {{$total_party_expense}}
+                                            @endif
                                         </h4>
                                         <?php
-                                        $percentage = ($total_party_expense / $total_current_expense) * 100;
+                                        $percentage = ($total_current_expense != 0) ? ($total_party_expense / $total_current_expense) * 100 : 0;
                                         ?>
-                                        <small> {{round($percentage,2)}} % / {{$total_current_expense}}</small>
+                                        @if($total_current_expense != 0)
+                                        <small>{{ round(($total_party_expense / $total_current_expense) * 100, 2) }}% / ${{ $total_current_expense }}</small>
+                                        @else
+                                        <small>0</small>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -81,13 +87,19 @@
                                         <h6>
                                             Coffee Expense
                                         </h6>
-                                        <h4 class="text-center text-light">
+                                        <h4 class="text-center text-danger">
+                                            @if( $total_coffee_expense !=0)
                                             $ {{ $total_coffee_expense}}
+                                            @endif
                                         </h4>
                                         <?php
-                                        $percentage = ($total_coffee_expense / $total_current_expense) * 100;
+                                        $percentage = ($total_current_expense != 0) ? ($total_coffee_expense / $total_current_expense) * 100 : 0;
                                         ?>
-                                        <small> {{round($percentage,2)}} % / {{$total_current_expense}}</small>
+                                        @if($total_current_expense != 0)
+                                        <small>{{ round(( $total_coffee_expense / $total_current_expense) * 100, 2) }}% / ${{ $total_current_expense }}</small>
+                                        @else
+                                        <small>0</small>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -99,13 +111,19 @@
                                         <h6>
                                             Meal Expense
                                         </h6>
-                                        <h4 class="text-center text-light">
+                                        <h4 class="text-center text-danger">
+                                            @if( $total_meal_expense !=0)
                                             $ {{ $total_meal_expense}}
+                                            @endif
                                         </h4>
                                         <?php
-                                        $percentage = ($total_meal_expense / $total_current_expense) * 100;
+                                        $percentage = ($total_current_expense != 0) ? ($total_meal_expense / $total_current_expense) * 100 : 0;
                                         ?>
-                                        <small> {{round($percentage,2)}} % / {{$total_current_expense}}</small>
+                                        @if($total_current_expense != 0)
+                                        <small>{{ round(( $total_meal_expense / $total_current_expense) * 100, 2) }}% / ${{ $total_current_expense }}</small>
+                                        @else
+                                        <small>0</small>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
