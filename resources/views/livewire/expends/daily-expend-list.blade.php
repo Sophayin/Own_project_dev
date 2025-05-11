@@ -2,7 +2,7 @@
     <section class="section">
         <div class="card-body col-12 d-flex mb-3 justify-content-between">
             <!-- Date -->
-            <div class="col-lg-6 d-flex mt-3">
+            <div class="col-lg-4 d-flex mt-3">
                 <div class="input-group w-50 p-2">
                     <input type="date" class="input-sm form-control custom-input datepicker"
                         wire:model.live="start_date" />
