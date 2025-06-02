@@ -111,16 +111,25 @@
                         <div class="p-2">
                             <div class="col-lg-12 col-sm-6">
                                 <h6>
-                                    {{__('Total Expense')}}
+                                    @if($total_current_expense + $total_other_expense > $amount)
+                                    {{__('Over Expect')}}
+                                    @else
+                                    {{__('Remain Balance')}}
+                                    @endif
                                 </h6>
                                 <h4 class="text-center text-success">
-                                    {{$total_current_expense + $total_other_expense }}
-                                </h4>
-                                <?php
-                                $remain_amount = $total_current_expense + $total_other_expense - $amount;
-                                $percentage = abs($remain_amount / $amount * 100);
-                                ?>
-                                <small class="text-center text-danger">Over: {{abs($amount - ($total_current_expense + $total_other_expense)) }} / {{$amount}}</small>
+                                    <?php $total_exp = $total_current_expense + $total_other_expense - $amount ?>
+                                    @if($total_current_expense + $total_other_expense < $amount)
+                                        ${{abs($total_current_expense + $total_other_expense - $amount)}}
+                                        @else
+                                        ${{$total_exp + $amount}}
+                                        @endif
+                                        </h4>
+                                        <?php
+                                        $remain_amount = $total_current_expense + $total_other_expense - $amount;
+                                        $percentage = abs($remain_amount / $amount * 100);
+                                        ?>
+                                        <small class="text-center"> {{round($percentage,2)}} % / {{$amount}}</small>
                             </div>
                         </div>
                     </div>
